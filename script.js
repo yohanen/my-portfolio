@@ -169,11 +169,28 @@ document.addEventListener('DOMContentLoaded', () => {
     let prev = (currentSlide - 1 + slides.length) % slides.length;
     showSlide(prev);
   }
-  // Attach direct event listeners to navigation buttons after DOM is ready
-  const testimonialNextBtn = document.getElementById('testimonialNextBtn');
-  const testimonialPrevBtn = document.getElementById('testimonialPrevBtn');
-  if (testimonialNextBtn) testimonialNextBtn.addEventListener('click', nextSlide);
-  if (testimonialPrevBtn) testimonialPrevBtn.addEventListener('click', prevSlide);
+  function attachTestimonialNavListeners() {
+    const testimonialNextBtn = document.getElementById('testimonialNextBtn');
+    const testimonialPrevBtn = document.getElementById('testimonialPrevBtn');
+    if (testimonialNextBtn) {
+      testimonialNextBtn.onclick = nextSlide;
+    }
+    if (testimonialPrevBtn) {
+      testimonialPrevBtn.onclick = prevSlide;
+    }
+  }
+  showSlide(0);
+  attachTestimonialNavListeners();
+  // Re-attach listeners every time Testimonials section is shown
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (link.getAttribute('data-section') === 'testimonials') {
+        setTimeout(() => {
+          attachTestimonialNavListeners();
+        }, 100);
+      }
+    });
+  });
   setInterval(nextSlide, 7000);
 
   // Copy email
