@@ -162,60 +162,30 @@ document.addEventListener('DOMContentLoaded', () => {
     let prev = (currentSlide - 1 + slides.length) % slides.length;
     showSlide(prev);
   }
-  // Always re-attach listeners when testimonials section is shown
-  function attachTestimonialListeners() {
-    const nextBtn = document.getElementById('nextSlideBtn');
-    const prevBtn = document.getElementById('prevSlideBtn');
-    if (nextBtn) {
-      nextBtn.onclick = nextSlide;
-    }
-    if (prevBtn) {
-      prevBtn.onclick = prevSlide;
-    }
-  }
-  attachTestimonialListeners();
-  // Also re-attach when testimonials section is shown
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (link.getAttribute('data-section') === 'testimonials') {
-        setTimeout(() => {
-          attachTestimonialListeners();
-          showSlide(currentSlide); // keep current slide
-        }, 100);
-      }
-    });
-  });
-  showSlide(0);
-  setInterval(nextSlide, 7000);
-
-  // Testimonial Read More/Read Less toggle
-  function attachTestimonialReadMore() {
-    document.querySelectorAll('.testimonial-readmore').forEach(btn => {
-      btn.onclick = function() {
-        const more = btn.parentElement.querySelector('.testimonial-more');
+  // Event delegation for testimonial navigation and read more
+  const testimonialSlider = document.getElementById('testimonialSlider');
+  if (testimonialSlider) {
+    testimonialSlider.addEventListener('click', function(e) {
+      if (e.target && e.target.id === 'nextSlideBtn') {
+        nextSlide();
+      } else if (e.target && e.target.id === 'prevSlideBtn') {
+        prevSlide();
+      } else if (e.target && e.target.classList.contains('testimonial-readmore')) {
+        const more = e.target.parentElement.querySelector('.testimonial-more');
         if (more) {
           if (more.classList.contains('hidden')) {
             more.classList.remove('hidden');
-            btn.textContent = 'Read Less';
+            e.target.textContent = 'Read Less';
           } else {
             more.classList.add('hidden');
-            btn.textContent = 'Read More';
+            e.target.textContent = 'Read More';
           }
         }
-      };
-    });
-  }
-  attachTestimonialReadMore();
-  // Re-attach on slide/nav change
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (link.getAttribute('data-section') === 'testimonials') {
-        setTimeout(() => {
-          attachTestimonialReadMore();
-        }, 100);
       }
     });
-  });
+  }
+  showSlide(0);
+  setInterval(nextSlide, 7000);
 
   // Copy email
   const copyBtn = document.querySelector('button[onclick="copyEmail()"]');
