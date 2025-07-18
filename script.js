@@ -188,6 +188,35 @@ document.addEventListener('DOMContentLoaded', () => {
   showSlide(0);
   setInterval(nextSlide, 7000);
 
+  // Testimonial Read More/Read Less toggle
+  function attachTestimonialReadMore() {
+    document.querySelectorAll('.testimonial-readmore').forEach(btn => {
+      btn.onclick = function() {
+        const more = btn.parentElement.querySelector('.testimonial-more');
+        if (more) {
+          if (more.classList.contains('hidden')) {
+            more.classList.remove('hidden');
+            btn.textContent = 'Read Less';
+          } else {
+            more.classList.add('hidden');
+            btn.textContent = 'Read More';
+          }
+        }
+      };
+    });
+  }
+  attachTestimonialReadMore();
+  // Re-attach on slide/nav change
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (link.getAttribute('data-section') === 'testimonials') {
+        setTimeout(() => {
+          attachTestimonialReadMore();
+        }, 100);
+      }
+    });
+  });
+
   // Copy email
   const copyBtn = document.querySelector('button[onclick="copyEmail()"]');
   if (copyBtn) {
