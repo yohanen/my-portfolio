@@ -70,12 +70,87 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(section);
   });
 
-  // Testimonial slider
+  // Animate skill bars when Skills section is shown
+  const skillsSection = document.getElementById('skills');
+  const skillNames = [
+    'Python', 'PHP', 'MySQL', 'CodeIgniter', 'HTML', 'CSS', 'JavaScript', 'Git', 'GitHub', 'Machine Learning', 'Communication', 'Critical Thinking', 'Teamwork', 'Problem Solving', 'Web Development'
+  ];
+  const skillPercents = [95, 85, 80, 80, 90, 90, 85, 80, 80, 75, 90, 85, 90, 85, 90];
+  if (skillsSection && !skillsSection.querySelector('.skill-bar')) {
+    const container = document.createElement('div');
+    container.className = 'mt-8';
+    skillNames.forEach((name, i) => {
+      const bar = document.createElement('div');
+      bar.className = 'mb-4';
+      bar.innerHTML = `<div class="flex justify-between mb-1"><span>${name}</span><span class="text-yellow-300 font-bold">${skillPercents[i]}%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width:0"></div></div>`;
+      container.appendChild(bar);
+    });
+    skillsSection.appendChild(container);
+  }
+  function animateSkillBars() {
+    if (!skillsSection) return;
+    const fills = skillsSection.querySelectorAll('.skill-bar-fill');
+    fills.forEach((fill, i) => {
+      setTimeout(() => {
+        fill.style.width = skillPercents[i] + '%';
+      }, 200 + i * 80);
+    });
+  }
+
+  // Show skill bars when Skills section is shown
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (link.getAttribute('data-section') === 'skills') {
+        setTimeout(animateSkillBars, 300);
+      }
+    });
+  });
+
+  // Smooth scroll for nav links
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const sectionId = link.getAttribute('data-section');
+      sections.forEach(section => section.classList.add('hidden'));
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.classList.remove('hidden');
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      navLinks.forEach(l => l.classList.remove('bg-yellow-400', 'text-black'));
+      link.classList.add('bg-yellow-400', 'text-black');
+      if (window.innerWidth < 768) {
+        document.getElementById('mobile-nav').classList.add('hidden');
+      }
+    });
+  });
+
+  // Project card ripple effect
+  document.querySelectorAll('.bg-gray-700, .bg-gray-600').forEach(card => {
+    card.addEventListener('mouseenter', function(e) {
+      const ripple = document.createElement('span');
+      ripple.className = 'absolute pointer-events-none rounded-full';
+      ripple.style.width = ripple.style.height = '120px';
+      ripple.style.left = (e.offsetX - 60) + 'px';
+      ripple.style.top = (e.offsetY - 60) + 'px';
+      ripple.style.background = 'rgba(250,204,21,0.15)';
+      ripple.style.zIndex = 10;
+      ripple.style.transition = 'opacity 0.6s';
+      ripple.style.position = 'absolute';
+      card.style.position = 'relative';
+      card.appendChild(ripple);
+      setTimeout(() => ripple.style.opacity = 0, 300);
+      setTimeout(() => ripple.remove(), 600);
+    });
+  });
+
+  // Enhanced testimonials carousel (fade/slide)
   const slides = document.querySelectorAll('.testimonial-slide');
   let currentSlide = 0;
   function showSlide(index) {
     slides.forEach((slide, i) => {
       slide.style.opacity = i === index ? '1' : '0';
+      slide.style.transform = i === index ? 'translateX(0)' : (i < index ? 'translateX(-40px)' : 'translateX(40px)');
     });
     currentSlide = index;
   }
@@ -87,11 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let prev = (currentSlide - 1 + slides.length) % slides.length;
     showSlide(prev);
   }
-  document.querySelectorAll('[onclick="nextSlide()"], [onclick="prevSlide()"]')
-    .forEach(btn => {
-      if (btn.getAttribute('onclick') === 'nextSlide()') btn.addEventListener('click', nextSlide);
-      if (btn.getAttribute('onclick') === 'prevSlide()') btn.addEventListener('click', prevSlide);
-    });
+  document.getElementById('nextSlideBtn')?.addEventListener('click', nextSlide);
+  document.getElementById('prevSlideBtn')?.addEventListener('click', prevSlide);
   showSlide(0);
   setInterval(nextSlide, 7000);
 
