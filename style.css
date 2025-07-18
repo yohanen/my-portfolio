@@ -8,24 +8,112 @@ body.light-mode {
   color: #1c1c1c !important;
 }
 
-/* Graduation photos hover effect */
-img.hover\:scale-105 {
-  transition: transform 0.3s;
+/* Sidebar scrollbar */
+.bg-gray-800[style*="overflow-y:auto"]::-webkit-scrollbar {
+  width: 8px;
+}
+.bg-gray-800[style*="overflow-y:auto"]::-webkit-scrollbar-thumb {
+  background: #facc15;
+  border-radius: 6px;
 }
 
-/* Testimonial slider */
+/* Section containers - glassmorphism */
+.section-content {
+  background: rgba(31, 41, 55, 0.85);
+  box-shadow: 0 8px 32px 0 rgba(31, 41, 55, 0.25);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.section-content:hover {
+  box-shadow: 0 12px 40px 0 #facc15a0;
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* Animated skill bars */
+.skill-bar {
+  background: #374151;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  height: 1.25rem;
+  box-shadow: 0 2px 8px #0002;
+}
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #facc15 0%, #fbbf24 100%);
+  width: 0;
+  transition: width 1.2s cubic-bezier(.4,2,.6,1);
+}
+
+/* Project card hover */
+.bg-gray-700:hover, .bg-gray-600:hover {
+  background: linear-gradient(135deg, #facc15 0%, #fbbf24 100%);
+  color: #1c1c1c !important;
+  box-shadow: 0 8px 32px 0 #facc15a0;
+  transform: scale(1.03);
+}
+
+/* Testimonial carousel */
+#testimonialSlider {
+  border-radius: 1.5rem;
+  background: rgba(250, 204, 21, 0.08);
+  box-shadow: 0 4px 24px 0 #facc1530;
+}
 .testimonial-slide {
-  transition: opacity 0.7s;
+  transition: opacity 0.7s, transform 0.7s;
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
 }
 
-/* Awards/Certifications details */
+/* Blog cards */
+.bg-gray-700.p-4 {
+  border: 1px solid #facc1530;
+  background: rgba(31, 41, 55, 0.92);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.bg-gray-700.p-4:hover {
+  box-shadow: 0 8px 32px 0 #facc15a0;
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* Achievements details */
 details[open] summary svg {
   transform: rotate(90deg);
 }
+details summary {
+  background: rgba(250,204,21,0.08);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: background 0.2s;
+}
+details[open] summary {
+  background: rgba(250,204,21,0.18);
+}
 
-/* Hide scrollbar for slider */
-#testimonialSlider::-webkit-scrollbar {
-  display: none;
+/* Hobbies icons */
+#hobbies img {
+  filter: drop-shadow(0 2px 8px #facc1530);
+  transition: transform 0.3s;
+}
+#hobbies img:hover {
+  transform: scale(1.15) rotate(-6deg);
+}
+
+/* Contact form */
+#contact form {
+  background: rgba(31,41,55,0.92);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px 0 #facc1530;
+  padding: 2rem 1.5rem;
+}
+#contact button[type="submit"] {
+  box-shadow: 0 2px 8px #facc1530;
+  font-size: 1.1rem;
 }
 
 /* Responsive tweaks */
