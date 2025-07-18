@@ -169,11 +169,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let prev = (currentSlide - 1 + slides.length) % slides.length;
     showSlide(prev);
   }
-  // Attach direct event listeners to navigation buttons
-  const nextBtn = document.getElementById('nextSlideBtn');
-  const prevBtn = document.getElementById('prevSlideBtn');
-  if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-  if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+  // Attach direct event listeners to navigation buttons after DOM is ready
+  setTimeout(() => {
+    const nextBtn = document.getElementById('nextSlideBtn');
+    const prevBtn = document.getElementById('prevSlideBtn');
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+  }, 0);
   // Event delegation for testimonial-readmore only
   const testimonialSlider = document.getElementById('testimonialSlider');
   if (testimonialSlider) {
