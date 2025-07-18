@@ -197,6 +197,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   showSlide(0);
+  // Use event delegation for navigation arrows to ensure they always work
+  document.addEventListener('click', function(e) {
+    if (e.target && e.target.id === 'nextSlideBtn') {
+      nextSlide();
+    } else if (e.target && e.target.id === 'prevSlideBtn') {
+      prevSlide();
+    }
+  });
   setInterval(nextSlide, 7000);
 
   // Copy email
