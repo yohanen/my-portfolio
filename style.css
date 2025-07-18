@@ -1,0 +1,44 @@
+/* Custom styles for Yohanen's Portfolio */
+html {
+  scroll-behavior: smooth;
+}
+
+body.light-mode {
+  background-color: #f0f2f5 !important;
+  color: #1c1c1c !important;
+}
+
+/* Graduation photos hover effect */
+img.hover\:scale-105 {
+  transition: transform 0.3s;
+}
+
+/* Testimonial slider */
+.testimonial-slide {
+  transition: opacity 0.7s;
+}
+
+/* Awards/Certifications details */
+details[open] summary svg {
+  transform: rotate(90deg);
+}
+
+/* Hide scrollbar for slider */
+#testimonialSlider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .max-w-6xl, .max-w-5xl, .max-w-4xl {
+    max-width: 100% !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Button hover for theme toggle */
+#themeToggle:hover {
+  background: #facc15;
+  color: #000;
+} 
