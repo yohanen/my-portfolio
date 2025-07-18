@@ -1,1 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yohanen | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+    .light-mode {
+      background-color: #f0f2f5 !important;
+      color: #1c1c1c !important;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans transition-colors duration-500">
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-black shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-xl font-bold text-yellow-400">Yohanen</div>
+      <div class="hidden md:flex space-x-6">
+        <a href="#about" class="hover:text-yellow-300 transition duration-200">About</a>
+        <a href="#skills" class="hover:text-yellow-300 transition duration-200">Skills</a>
+        <a href="#projects" class="hover:text-yellow-300 transition duration-200">Projects</a>
+        <a href="#resume" class="hover:text-yellow-300 transition duration-200">Resume</a>
+        <a href="#contact" class="hover:text-yellow-300 transition duration-200">Contact</a>
+      </div>
+      <button class="md:hidden text-yellow-300 text-2xl" id="menu-btn">☰</button>
+    </div>
+    <div class="hidden md:hidden flex-col space-y-3 pb-4 px-4" id="mobile-menu">
+      <a href="#about" class="hover:text-yellow-300">About</a>
+      <a href="#skills" class="hover:text-yellow-300">Skills</a>
+      <a href="#projects" class="hover:text-yellow-300">Projects</a>
+      <a href="#resume" class="hover:text-yellow-300">Resume</a>
+      <a href="#contact" class="hover:text-yellow-300">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="text-center py-10 bg-gradient-to-r from-indigo-800 to-gray-900 relative">
+    <button id="themeToggle" onclick="toggleTheme()" class="absolute top-4 right-4 px-4 py-1 border border-yellow-300 rounded-full font-bold text-yellow-300 hover:bg-yellow-300 hover:text-black transition">
+      ☀️ Light Mode
+    </button>
+    <h1 class="text-4xl font-bold mb-2">Yohanen Dinagde Ejeta</h1>
+    <p class="text-lg">Tech Enthusiast | Machine Learning & Data Science | Open to Internships, Jobs, Remote Roles & Scholarship Opportunities</p>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+    <!-- About Me -->
+    <section id="about" class="bg-gray-800 p-6 rounded-lg shadow opacity-0 translate-y-4 transition duration-700">
+      <h2 class="text-yellow-400 text-2xl font-semibold mb-4">✨ About Me</h2>
+      <p class="mb-2">
+        Hi! I'm Yohanen, a recent Bachelor of Computer Application (BCA) graduate from Uttaranchal University. I'm passionate about building real-world tech solutions, exploring new technologies, and contributing to communities that value innovation and learning.
+      </p>
+      <p>
+        I'm particularly interested in projects that combine education, technology, and social good. I enjoy collaborating, solving real-life problems through code, and learning as I go. Whether it’s backend logic or front-end user experiences, I strive to create meaningful impact through technology.
+      </p>
+      <div class="mt-4">
+        <p class="text-sm text-gray-400 mb-2">🎥 Watch My Introduction Video:</p>
+        <iframe 
+          src="https://drive.google.com/file/d/19K94zc3NuZLh2TSmBFSRs6LN9SfPhUgj/preview" 
+          width="100%" height="360" 
+          allow="autoplay" 
+          class="rounded shadow">
+        </iframe>
+      </div>
+      <div class="mt-10">
+  <h3 class="text-yellow-400 text-lg font-semibold mb-4">🎓 Graduation Highlight</h3>
+
+  <!-- Graduation Photos Grid -->
+<div class="mt-10">
+  <h3 class="text-yellow-400 text-xl font-bold mb-6">🎓 Graduation Highlight</h3>
+
+  <!-- Graduation Photos Grid -->
+  <div class="grid sm:grid-cols-2 gap-4 mb-8">
+    <div>
+      <img src="assets/graduation_photo1.jpg" alt="Graduation Moment 1" class="rounded-lg shadow-md w-full hover:scale-105 transition-transform duration-300" />
+      <p class="text-base text-yellow-300 text-center font-medium mt-3">✨ With Fellow Graduate – unforgettable moment!</p>
+    </div>
+    <div>
+      <img src="assets/graduation_photo2.jpg" alt="Graduation Moment 2" class="rounded-lg shadow-md w-full hover:scale-105 transition-transform duration-300" />
+      <p class="text-base text-yellow-300 text-center font-medium mt-3">🎓 Holding my BCA certificate with pride!</p>
+    </div>
+  </div>
+
+  <!-- Graduation Video -->
+  <div>
+    <h4 class="text-lg font-semibold text-yellow-300 mb-2">📽️Receive My Degree</h4>
+    <iframe 
+      src="https://drive.google.com/file/d/1YxK9ENfFz8NJLjLTICLQBiYakvWWR1K-/preview" 
+      width="100%" height="360" 
+      allow="autoplay" 
+      class="rounded shadow">
+    </iframe>
+  </div>
+</div>
+</section>
+
+    <!-- Skills -->
+    <section id="skills" class="bg-gray-800 p-6 rounded-lg shadow opacity-0 translate-y-4 transition duration-700">
+      <h2 class="text-yellow-400 text-2xl font-semibold mb-4">🔧 Skills</h2>
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-gray-700 px-3 py-1 rounded">Python</span>
+        <span class="bg-gray-700 px-3 py-1 rounded">PHP</span>
+        <span class="bg-gray-700 px-3 py-1 rounded">MySQL</span>
+        <span class="bg-gray-700 px-3 py-1 rounded">CodeIgniter</span>
+        <span class="bg-gray-700 px-3 py-1 rounded">HTML</span>
+        <span class="bg-gray-700 px-3 py-1 rounded">CSS</span>
+        <span class="bg-gray-700 px-3 py-1 rounded">JavaScript</span>
+        <span class="bg-gray-700 px-3 py-1 rounded">Git</span>
+        <span class="bg-gray-700 px-3 py-1 rounded">GitHub</span>
+        <span class="bg-gray-700 px-3 py-1 rounded">Machine Learning</span>
+        <span class="bg-gray-700 px-3 py-1 rounded">Communication</span>
+        <span class="bg-gray-700 px-3 py-1 rounded">Critical Thinking</span>
+        <span class="bg-gray-700 px-3 py-1 rounded">Teamwork</span>
+        <span class="bg-gray-700 px-3 py-1 rounded">Problem Solving</span>
+        <span class="bg-gray-700 px-3 py-1 rounded">Web Development</span>
+      </div>
+    </section>
+    
+    <section id="blog" class="bg-gray-800 p-6 rounded-lg shadow opacity-0 translate-y-4 transition duration-700">
+  <h2 class="text-yellow-400 text-2xl font-semibold mb-6">📝 Blog</h2>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <!-- Blog Post 1 -->
+    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition">
+      <h3 class="text-lg font-semibold text-yellow-300 mb-2">5 Lessons I Learned Building My First Full-Stack Project</h3>
+      <p class="text-sm text-gray-300 mb-3">
+        A deep dive into lessons learned while developing the Smart School Management System using CodeIgniter and MySQL.
+      </p>
+      <a href="#projects" class="text-yellow-400 hover:underline text-sm">Read More →</a>
+    </div>
+
+    <!-- Blog Post 2 -->
+    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition">
+      <h3 class="text-lg font-semibold text-yellow-300 mb-2">Why I Love Machine Learning</h3>
+      <p class="text-sm text-gray-300 mb-3">
+        Reflections on how AI and machine learning can transform education and contribute to social good.
+      </p>
+      <a href="#about" class="text-yellow-400 hover:underline text-sm">Read More →</a>
+    </div>
+  </div>
+</section>
+    
+    <!-- Projects -->
+     <section id="projects" class="bg-gray-800 p-6 rounded-lg shadow opacity-0 translate-y-4 transition duration-700">
+      <h2 class="text-yellow-400 text-2xl font-semibold mb-6">📚 Featured Project</h2>
+    
+      <div class="bg-gray-700 p-5 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold text-yellow-300 mb-2">Smart School Management System</h3>
+        <p class="text-sm text-gray-300 mb-3">
+          A full-stack web application built using <strong>CodeIgniter (PHP)</strong>, <strong>MySQL</strong>, <strong>HTML</strong>, and <strong>CSS</strong>. It provides dashboards for Admin, Teacher, Student, and Parent roles — including features like attendance, library, grades, and messaging.
+        </p>
+    
+        <!-- Tech Used -->
+        <div class="flex flex-wrap gap-2 mb-3 text-sm text-white">
+          <span class="bg-gray-600 px-2 py-1 rounded">PHP</span>
+          <span class="bg-gray-600 px-2 py-1 rounded">CodeIgniter</span>
+          <span class="bg-gray-600 px-2 py-1 rounded">MySQL</span>
+          <span class="bg-gray-600 px-2 py-1 rounded">HTML</span>
+          <span class="bg-gray-600 px-2 py-1 rounded">CSS</span>
+        </div>
+    
+        <!-- Screenshots Gallery -->
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <img src="assets/loginpage.png" alt="Login Page" class="rounded shadow" />
+          <img src="assets/admindashboard.png" alt="Admin Dashboard" class="rounded shadow" />
+          <img src="assets/teacherdashboard.png" alt="Teacher Dashboard" class="rounded shadow" />
+          <img src="assets/parentdashboard.png" alt="Parent Dashboard" class="rounded shadow" />
+        </div>
+    
+        <!-- GitHub Link -->
+        <a href="https://github.com/yohanen/smart-school-management-system" target="_blank"
+           class="inline-block bg-yellow-400 text-black px-4 py-2 rounded font-semibold hover:bg-yellow-300 transition">
+          🔗 View on GitHub
+        </a>
+      </div>
+    </section>
+        
+    <!-- Resume -->
+    <section id="resume" class="bg-gray-800 p-6 rounded-lg shadow opacity-0 translate-y-4 transition duration-700">
+      <h2 class="text-yellow-400 text-2xl font-semibold mb-4">📄 Download Resume</h2>
+      <p class="mb-2">You can download my resume here:</p>
+      <a href="Resume.pdf" target="_blank" class="text-yellow-400 hover:underline">Download Resume (PDF)</a>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="bg-gray-800 p-6 rounded-lg shadow opacity-0 translate-y-4 transition duration-700">
+      <h2 class="text-yellow-400 text-2xl font-semibold mb-6">📜 Testimonials</h2>
+    
+      <div class="relative max-w-xl mx-auto">
+        <div id="testimonialSlider" class="relative overflow-hidden h-64">
+          <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 opacity-100">
+            <p class="italic text-gray-300 mb-4">“Mr. Yohanen Dinagde Ejeta is a highly dedicated and disciplined individual... intellectually curious throughout his BCA program.”</p>
+            <p class="text-sm font-semibold text-yellow-300">— Prof. (Dr.) Sonal Sharma<br>Director, Uttaranchal University</p>
+          </div>
+    
+          <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 opacity-0">
+            <p class="italic text-gray-300 mb-4">“Yohanen has shown exceptional performance in academics, research projects, and student-led initiatives... an active member of several key tech groups.”</p>
+            <p class="text-sm font-semibold text-yellow-300">— Dr. Sameer Dev Sharma<br>HoD, Uttaranchal University</p>
+          </div>
+    
+          <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 opacity-0">
+            <p class="italic text-gray-300 mb-4">“Yohanen has shown exceptional performance in academics, research projects, and student-led initiatives... an active member of several key tech groups.”</p>
+            <p class="text-sm font-semibold text-yellow-300">— Mrs. Divya Singh<br>Class Coordinator (3rd Year), Uttaranchal University</p>
+          </div>
+        </div>
+    
+        <!-- Arrow Buttons -->
+        <div class="absolute inset-y-0 left-0 flex items-center">
+          <button onclick="prevSlide()" class="text-yellow-400 text-xl px-3">&#8592;</button>
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center">
+          <button onclick="nextSlide()" class="text-yellow-400 text-xl px-3">&#8594;</button>
+        </div>
+      </div>
+    </section>
+
+<section class="mt-16 relative">
+  <h2 class="text-yellow-400 text-3xl font-bold mb-10 text-center">🎓 Education Background</h2>
+  <div class="border-l-4 border-yellow-400 pl-10 relative space-y-12">
+
+    <!-- BCA -->
+    <div class="relative">
+      <div class="absolute w-4 h-4 bg-yellow-400 rounded-full -left-6 top-1.5"></div>
+      <h3 class="text-white text-xl font-bold">Bachelor of Computer Application (BCA)</h3>
+      <p class="text-gray-300">Uttaranchal University – Dehradun, India</p>
+      <p class="text-yellow-300 text-sm">01 Aug 2022 – 27 May 2025 | CGPA: 7.92</p>
+      <p class="text-gray-400 text-sm">Gained strong skills in programming, databases, and web development. Completed internships and a full-stack project using CodeIgniter.</p>
+    </div>
+
+    <!-- ALX -->
+    <div class="relative">
+      <div class="absolute w-4 h-4 bg-yellow-400 rounded-full -left-6 top-1.5"></div>
+      <h3 class="text-white text-xl font-bold">Software Engineering Program</h3>
+      <p class="text-gray-300">ALX Ethiopia – Addis Ababa</p>
+      <p class="text-yellow-300 text-sm">05 Jun 2021 – 13 May 2022</p>
+      <p class="text-gray-400 text-sm">Completed hands-on training in software engineering and collaborative coding projects.</p>
+    </div>
+
+    <!-- Preparatory -->
+    <div class="relative">
+      <div class="absolute w-4 h-4 bg-yellow-400 rounded-full -left-6 top-1.5"></div>
+      <h3 class="text-white text-xl font-bold">Preparatory School (Grade 11–12)</h3>
+      <p class="text-gray-300">Guder Secondary School – Guder, Ethiopia</p>
+      <p class="text-yellow-300 text-sm">06 Aug 2018 – 13 May 2020 | Average: 89.18%</p>
+      <p class="text-gray-400 text-sm">Excelled in the Natural Science stream with strong academic performance and leadership roles.</p>
+    </div>
+
+    <!-- Secondary -->
+    <div class="relative">
+      <div class="absolute w-4 h-4 bg-yellow-400 rounded-full -left-6 top-1.5"></div>
+      <h3 class="text-white text-xl font-bold">Secondary School (Grade 9–10)</h3>
+      <p class="text-gray-300">Guder Secondary School – Guder, Ethiopia</p>
+      <p class="text-yellow-300 text-sm">03 Aug 2015 – 26 May 2017 | Average: 87.74%</p>
+      <p class="text-gray-400 text-sm">Maintained consistent academic performance and participated in school activities.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="languages" class="bg-gray-50 py-12 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8 text-yellow-600">Language Skills</h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Mother Tongue</h3>
+        <p class="text-gray-700">Afan Oromo</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Other Languages</h3>
+        <div class="space-y-4">
+          <!-- Amharic -->
+          <div>
+            <h4 class="font-medium text-lg text-gray-800">Amharic</h4>
+            <p class="text-sm text-gray-600">Listening: C2 | Reading: C2 | Writing: C1 | Speaking: C2</p>
+          </div>
+          <!-- English -->
+          <div>
+            <h4 class="font-medium text-lg text-gray-800">English</h4>
+            <p class="text-sm text-gray-600">Listening: C2 | Reading: C1 | Writing: C1 | Speaking: C1</p>
+          </div>
+          <!-- Hindi -->
+          <div>
+            <h4 class="font-medium text-lg text-gray-800">Hindi</h4>
+            <p class="text-sm text-gray-600">Listening: A1 | Reading: A1 | Writing: A1 | Speaking: A1</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-6 text-sm text-center text-gray-500">
+      <em>Level Reference: A1–A2: Basic | B1–B2: Independent | C1–C2: Proficient</em>
+    </p>
+  </div>
+</section>
+
+<!-- HHobbies Sextion -->
+<section id="hobbies" class="bg-white py-12 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-yellow-600 mb-10">Hobbies & Interests</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center text-gray-700">
+
+      <div>
+        <img src="https://img.icons8.com/ios-filled/50/4a4a4a/bicycle.png" class="mx-auto mb-3" alt="Cycling">
+        <p class="font-medium">Cycling & Outdoor Activities</p>
+      </div>
+
+      <div>
+        <img src="https://img.icons8.com/ios-filled/50/4a4a4a/helping-hand.png" class="mx-auto mb-3" alt="Volunteering">
+        <p class="font-medium">Volunteering & Community Work</p>
+      </div>
+
+      <div>
+        <img src="https://img.icons8.com/ios-filled/50/4a4a4a/language.png" class="mx-auto mb-3" alt="Languages">
+        <p class="font-medium">Learning New Languages</p>
+      </div>
+
+      <div>
+        <img src="https://img.icons8.com/ios-filled/50/4a4a4a/movie.png" class="mx-auto mb-3" alt="Movies">
+        <p class="font-medium">Watching Movies</p>
+      </div>
+
+      <div>
+        <img src="https://img.icons8.com/ios-filled/50/4a4a4a/code.png" class="mx-auto mb-3" alt="Web Dev">
+        <p class="font-medium">Web Development & UI Design</p>
+      </div>
+
+      <div>
+        <img src="https://img.icons8.com/ios-filled/50/4a4a4a/news.png" class="mx-auto mb-3" alt="Tech Blogging">
+        <p class="font-medium">Tech Blogging & Research</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+ <section class="mt-12">
+  <h2 class="text-yellow-400 text-2xl font-bold mb-6">🏆 Achievements & Involvement</h2>
+
+  <!-- Awards & Honors -->
+  <details class="group mb-6 transition-all duration-300">
+    <summary class="cursor-pointer text-lg font-semibold text-white flex items-center justify-between">
+      <span>🎖️ Awards & Honors</span>
+      <svg class="w-5 h-5 transition-transform group-open:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </summary>
+    <ul class="list-disc list-inside text-yellow-300 mt-3 ml-2">
+      <li>
+        BCA Top Performer – 2024  
+        <br><a href="certificates/top-performer.pdf" target="_blank" class="underline text-sm">[View Certificate]</a>
+      </li>
+      <li>
+        Hackathon Winner – TechFest 2023  
+        <br><a href="certificates/hackathon-winner.pdf" target="_blank" class="underline text-sm">[View Certificate]</a>
+      </li>
+    </ul>
+  </details>
+
+  <!-- Certifications -->
+  <details class="group mb-6 transition-all duration-300">
+    <summary class="cursor-pointer text-lg font-semibold text-white flex items-center justify-between">
+      <span>📜 Certifications</span>
+      <svg class="w-5 h-5 transition-transform group-open:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </summary>
+    <ul class="list-disc list-inside text-yellow-300 mt-3 ml-2">
+      <li>
+        Python for Everybody – Coursera  
+        <br><a href="certificates/python-coursera.pdf" target="_blank" class="underline text-sm">[View Certificate]</a>
+      </li>
+      <li>
+        Google Digital Marketing Certification  
+        <br><a href="certificates/google-digital-marketing.pdf" target="_blank" class="underline text-sm">[View Certificate]</a>
+      </li>
+    </ul>
+  </details>
+
+  <!-- Volunteering & Clubs -->
+  <details class="group transition-all duration-300">
+    <summary class="cursor-pointer text-lg font-semibold text-white flex items-center justify-between">
+      <span>🤝 Volunteering & Club Activities</span>
+      <svg class="w-5 h-5 transition-transform group-open:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </summary>
+    <ul class="list-disc list-inside text-yellow-300 mt-3 ml-2">
+      <li>
+        Member – Robotics Club (2022–2024)  
+        <br><a href="certificates/robotics-membership.pdf" target="_blank" class="underline text-sm">[View Certificate]</a>
+      </li>
+      <li>
+        Organizer – Cybersecurity Awareness Week 2023  
+        <br><a href="certificates/cybersecurity-event.pdf" target="_blank" class="underline text-sm">[View Certificate]</a>
+      </li>
+    </ul>
+  </details>
+</section>
+
+
+
+    <!-- Location -->
+    <section class="bg-gray-800 p-6 rounded-lg shadow opacity-0 translate-y-4 transition duration-700">
+      <h2 class="text-yellow-400 text-2xl font-semibold mb-4">📍 My Location</h2>
+      <p class="mb-4">I studied at Uttaranchal University and am currently based in India.</p>
+      <iframe class="w-full h-64 rounded shadow" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.6881643665355!2d77.98079241544655!3d30.32556481134586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929cb5e1d0629%3A0xbed7e901f43ad7d0!2sUttaranchal%20University!5e0!3m2!1sen!2sin!4v1625032001234!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+    <!-- Contact -->
+<section id="contact" class="bg-gray-800 p-6 rounded-lg shadow opacity-0 translate-y-4 transition duration-700">
+  <h2 class="text-yellow-400 text-2xl font-semibold mb-4">✉ Contact</h2>
+  <form action="https://formspree.io/f/xovlqwdd" method="POST" class="space-y-4">
+    <div>
+      <label class="block text-sm font-medium mb-1">Your Name</label>
+      <input type="text" name="name" required class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+    </div>
+    <div>
+      <label class="block text-sm font-medium mb-1">Your Email</label>
+      <input type="email" name="_replyto" required class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+    </div>
+    <div>
+      <label class="block text-sm font-medium mb-1">Message</label>
+      <textarea name="message" rows="4" required class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+    </div>
+    <button type="submit" class="bg-yellow-400 text-black font-semibold px-6 py-2 rounded hover:bg-yellow-300 transition">
+      Send Message
+    </button>
+    <div class="mt-8 text-sm text-gray-300 space-y-1">
+      <p><i class="fab fa-github text-yellow-400 mr-2"></i>GitHub:
+      <a href="https://github.com/yohanen" target="_blank" class="text-yellow-300 hover:underline">github.com/yohanen</a>
+      </p>
+      <p><i class="fab fa-linkedin text-yellow-400 mr-2"></i>LinkedIn:
+      <a href="https://www.linkedin.com/in/yohanen2021" target="_blank" class="text-yellow-300 hover:underline">linkedin.com/in/yohanen2021</a>
+      </p>
+      <p>
+         <i class="fas fa-envelope text-yellow-400 mr-2"></i>Email:
+         <a href="mailto:yohanendinagde7@gmail.com" id="emailText" class="text-yellow-300 hover:underline">yohanendinagde7@gmail.com</a>
+         <button onclick="copyEmail()" class="ml-2 px-2 py-1 bg-yellow-400 text-black rounded text-xs hover:bg-yellow-300">
+            Copy
+         </button>
+      </p>
+
+      <p><i class="fas fa-phone text-yellow-400 mr-2"></i>Phone: +91-7409283325</p>
+    </div>
+  </form>
+</section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 bg-gray-950 text-sm text-gray-400 mt-10">
+    &copy; 2025 Yohanen Dinagde Ejeta. All rights reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme toggle
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      const btn = document.getElementById('themeToggle');
+      const isLight = document.body.classList.contains('light-mode');
+      btn.textContent = isLight ? '🌙 Dark Mode' : '☀️ Light Mode';
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Scroll reveal animation
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("opacity-100", "translate-y-0");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach((section) => {
+      section.classList.add("opacity-0", "translate-y-4", "transition", "duration-700");
+      observer.observe(section);
+    });
+  </script>
+  <script>
+  function copyEmail() {
+    const email = document.getElementById("emailText").textContent;
+    navigator.clipboard.writeText(email).then(() => {
+      alert("✅ Email copied to clipboard!");
+    });
+  }
+</script>
+<script>
+  const slides = document.querySelectorAll(".testimonial-slide");
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.opacity = i === index ? "1" : "0";
+    });
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    let next = (currentSlide + 1) % slides.length;
+    showSlide(next);
+  }
+
+  function prevSlide() {
+    let prev = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(prev);
+  }
+
+  // Optional: auto-slide every 7 seconds
+  setInterval(() => nextSlide(), 7000);
+</script>
+</body>
+</html>
 
