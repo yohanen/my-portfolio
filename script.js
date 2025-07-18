@@ -7,6 +7,46 @@ function toggleTheme() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Sidebar navigation logic
+  const sections = document.querySelectorAll('.section-content');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  // Show only About section on load
+  sections.forEach(section => section.classList.add('hidden'));
+  const aboutSection = document.getElementById('about');
+  if (aboutSection) aboutSection.classList.remove('hidden');
+
+  // Nav link click handler
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const sectionId = link.getAttribute('data-section');
+      sections.forEach(section => section.classList.add('hidden'));
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) targetSection.classList.remove('hidden');
+      navLinks.forEach(l => l.classList.remove('bg-yellow-400', 'text-black'));
+      link.classList.add('bg-yellow-400', 'text-black');
+      // Close mobile nav if open
+      if (window.innerWidth < 768) {
+        document.getElementById('mobile-nav').classList.add('hidden');
+      }
+    });
+  });
+
+  // Hamburger menu for mobile
+  const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  if (mobileNavToggle && mobileNav) {
+    mobileNavToggle.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+    });
+  }
+
+  // Highlight About nav link on load
+  navLinks.forEach(l => l.classList.remove('bg-yellow-400', 'text-black'));
+  const aboutNav = Array.from(navLinks).find(l => l.getAttribute('data-section') === 'about');
+  if (aboutNav) aboutNav.classList.add('bg-yellow-400', 'text-black');
+
   // Mobile menu
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -15,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Scroll reveal animation
-  const sections = document.querySelectorAll('section');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
