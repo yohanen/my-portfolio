@@ -170,41 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(prev);
   }
   // Attach direct event listeners to navigation buttons after DOM is ready
-  setTimeout(() => {
-    const nextBtn = document.getElementById('nextSlideBtn');
-    const prevBtn = document.getElementById('prevSlideBtn');
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-  }, 0);
-  // Event delegation for testimonial-readmore only
-  const testimonialSlider = document.getElementById('testimonialSlider');
-  if (testimonialSlider) {
-    testimonialSlider.addEventListener('click', function(e) {
-      if (e.target && e.target.classList.contains('testimonial-readmore')) {
-        const slide = slides[currentSlide];
-        const more = slide.querySelector('.testimonial-more');
-        const btn = slide.querySelector('.testimonial-readmore');
-        if (more && btn) {
-          if (more.classList.contains('hidden')) {
-            more.classList.remove('hidden');
-            btn.textContent = 'Read Less';
-          } else {
-            more.classList.add('hidden');
-            btn.textContent = 'Read More';
-          }
-        }
-      }
-    });
-  }
-  showSlide(0);
-  // Use event delegation for navigation arrows to ensure they always work
-  document.addEventListener('click', function(e) {
-    if (e.target && e.target.id === 'nextSlideBtn') {
-      nextSlide();
-    } else if (e.target && e.target.id === 'prevSlideBtn') {
-      prevSlide();
-    }
-  });
+  const testimonialNextBtn = document.getElementById('testimonialNextBtn');
+  const testimonialPrevBtn = document.getElementById('testimonialPrevBtn');
+  if (testimonialNextBtn) testimonialNextBtn.addEventListener('click', nextSlide);
+  if (testimonialPrevBtn) testimonialPrevBtn.addEventListener('click', prevSlide);
   setInterval(nextSlide, 7000);
 
   // Copy email
