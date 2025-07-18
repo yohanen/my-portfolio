@@ -151,6 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
     slides.forEach((slide, i) => {
       slide.style.opacity = i === index ? '1' : '0';
       slide.style.transform = i === index ? 'translateX(0)' : (i < index ? 'translateX(-40px)' : 'translateX(40px)');
+      // Hide all testimonial-more and reset readmore button for hidden slides
+      if (i !== index) {
+        const more = slide.querySelector('.testimonial-more');
+        const btn = slide.querySelector('.testimonial-readmore');
+        if (more) more.classList.add('hidden');
+        if (btn) btn.textContent = 'Read More';
+      }
     });
     currentSlide = index;
   }
@@ -171,14 +178,16 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (e.target && e.target.id === 'prevSlideBtn') {
         prevSlide();
       } else if (e.target && e.target.classList.contains('testimonial-readmore')) {
-        const more = e.target.parentElement.querySelector('.testimonial-more');
-        if (more) {
+        const slide = slides[currentSlide];
+        const more = slide.querySelector('.testimonial-more');
+        const btn = slide.querySelector('.testimonial-readmore');
+        if (more && btn) {
           if (more.classList.contains('hidden')) {
             more.classList.remove('hidden');
-            e.target.textContent = 'Read Less';
+            btn.textContent = 'Read Less';
           } else {
             more.classList.add('hidden');
-            e.target.textContent = 'Read More';
+            btn.textContent = 'Read More';
           }
         }
       }
