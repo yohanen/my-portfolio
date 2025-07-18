@@ -169,15 +169,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let prev = (currentSlide - 1 + slides.length) % slides.length;
     showSlide(prev);
   }
-  // Event delegation for testimonial navigation and read more
+  // Attach direct event listeners to navigation buttons
+  const nextBtn = document.getElementById('nextSlideBtn');
+  const prevBtn = document.getElementById('prevSlideBtn');
+  if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+  if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+  // Event delegation for testimonial-readmore only
   const testimonialSlider = document.getElementById('testimonialSlider');
   if (testimonialSlider) {
     testimonialSlider.addEventListener('click', function(e) {
-      if (e.target && e.target.id === 'nextSlideBtn') {
-        nextSlide();
-      } else if (e.target && e.target.id === 'prevSlideBtn') {
-        prevSlide();
-      } else if (e.target && e.target.classList.contains('testimonial-readmore')) {
+      if (e.target && e.target.classList.contains('testimonial-readmore')) {
         const slide = slides[currentSlide];
         const more = slide.querySelector('.testimonial-more');
         const btn = slide.querySelector('.testimonial-readmore');
