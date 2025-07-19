@@ -188,10 +188,13 @@
               <p class="text-sm font-semibold text-yellow-300">— Mrs. Divya Singh<br><span class="text-gray-400">Class Coordinator (3rd Year)<br>Uttaranchal University, Dehradun</span></p>
             </div>
           </div>
-          <div class="flex justify-center items-center gap-3 mt-6 z-20">
-            <button class="testimonial-dot w-4 h-4 rounded-full bg-yellow-400 opacity-80 border-2 border-yellow-400 active" data-index="0" aria-label="Show testimonial 1"></button>
-            <button class="testimonial-dot w-4 h-4 rounded-full bg-gray-500 opacity-50 border-2 border-yellow-400" data-index="1" aria-label="Show testimonial 2"></button>
-            <button class="testimonial-dot w-4 h-4 rounded-full bg-gray-500 opacity-50 border-2 border-yellow-400" data-index="2" aria-label="Show testimonial 3"></button>
+          <div class="flex justify-center items-center w-full mt-6 z-20">
+            <label for="testimonialSelect" class="mr-2 text-yellow-400 font-semibold">Choose Testimonial:</label>
+            <select id="testimonialSelect" class="bg-gray-900 text-yellow-400 border border-yellow-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+              <option value="0">Prof. (Dr.) Sonal Sharma</option>
+              <option value="1">Dr. Sameer Dev Sharma</option>
+              <option value="2">Mrs. Divya Singh</option>
+            </select>
           </div>
         </div>
       </section>
