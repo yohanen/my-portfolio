@@ -70,6 +70,21 @@ body.light-mode {
   border-radius: 1rem;
 }
 
+/* Testimonial dots */
+.testimonial-dot {
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #facc15;
+  background: #a3a3a3;
+  opacity: 0.5;
+  transition: background 0.2s, opacity 0.2s, box-shadow 0.2s;
+}
+.testimonial-dot.active, .testimonial-dot:focus {
+  background: #facc15;
+  opacity: 0.9;
+  box-shadow: 0 0 0 2px #facc15;
+}
+
 /* Blog cards */
 .bg-gray-700.p-4 {
   border: 1px solid #facc1530;
