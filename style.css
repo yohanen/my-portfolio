@@ -3,9 +3,23 @@ html {
   scroll-behavior: smooth;
 }
 
-body.light-mode {
-  background-color: #f0f2f5 !important;
-  color: #1c1c1c !important;
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #18181b 0%, #27272a 100%);
+}
+
+.nav-link {
+  color: #facc15;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 0.25rem;
+  text-align: left;
+}
+.nav-link:hover, .nav-link.active {
+  background: #facc15;
+  color: #18181b;
 }
 
 /* Sidebar scrollbar */
@@ -17,12 +31,11 @@ body.light-mode {
   border-radius: 6px;
 }
 
-/* Section containers - glassmorphism */
 .section-content {
-  background: rgba(31, 41, 55, 0.85);
+  background: rgba(31, 41, 55, 0.92);
   box-shadow: 0 8px 32px 0 rgba(31, 41, 55, 0.25);
   border-radius: 1.25rem;
-  padding: 2rem;
+  padding: 2.5rem 2rem;
   margin-bottom: 2rem;
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255,255,255,0.08);
@@ -33,13 +46,33 @@ body.light-mode {
   transform: translateY(-4px) scale(1.01);
 }
 
-/* Animated skill bars */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #facc15;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#skillsList .skill {
+  background: #27272a;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1rem;
+  box-shadow: 0 2px 8px #0002;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
 .skill-bar {
   background: #374151;
   border-radius: 9999px;
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
   height: 1.25rem;
+  width: 100%;
   box-shadow: 0 2px 8px #0002;
 }
 .skill-bar-fill {
@@ -58,16 +91,41 @@ body.light-mode {
   transform: scale(1.03);
 }
 
-/* Testimonial carousel */
+/* Testimonials */
 #testimonialSlider {
-  border-radius: 1.5rem;
-  background: rgba(250, 204, 21, 0.08);
-  box-shadow: 0 4px 24px 0 #facc1530;
+  min-height: 200px;
+  margin-bottom: 1rem;
 }
 .testimonial-slide {
-  transition: opacity 0.7s, transform 0.7s;
+  display: none;
   padding: 2rem 1.5rem;
   border-radius: 1rem;
+  background: rgba(250, 204, 21, 0.08);
+  box-shadow: 0 4px 24px 0 #facc1530;
+  text-align: left;
+}
+.testimonial-slide.active {
+  display: block;
+  animation: fadeIn 0.7s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+#testimonialNav button {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  background: #a3a3a3;
+  border: 2px solid #facc15;
+  opacity: 0.5;
+  margin: 0 0.25rem;
+  transition: background 0.2s, opacity 0.2s;
+  cursor: pointer;
+}
+#testimonialNav button.active {
+  background: #facc15;
+  opacity: 1;
 }
 
 /* Testimonial dots */
@@ -132,12 +190,14 @@ details[open] summary {
 }
 
 /* Responsive tweaks */
+@media (max-width: 1024px) {
+  .ml-72 { margin-left: 0 !important; }
+  aside { display: none !important; }
+  main { padding-left: 1rem !important; padding-right: 1rem !important; }
+}
 @media (max-width: 768px) {
-  .max-w-6xl, .max-w-5xl, .max-w-4xl {
-    max-width: 100% !important;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+  .section-content { padding: 1.25rem 0.5rem; }
+  .section-title { font-size: 1.25rem; }
 }
 
 /* Button hover for theme toggle */
