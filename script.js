@@ -180,7 +180,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   showSlide(0);
-  attachTestimonialNavListeners();
+  // Dot navigation for testimonials
+  const testimonialDots = document.querySelectorAll('.testimonial-dot');
+  testimonialDots.forEach(dot => {
+    dot.addEventListener('click', function() {
+      const idx = parseInt(dot.getAttribute('data-index'));
+      showSlide(idx);
+      testimonialDots.forEach(d => d.classList.remove('active', 'bg-yellow-400', 'opacity-80'));
+      dot.classList.add('active', 'bg-yellow-400', 'opacity-80');
+      testimonialDots.forEach(d => d.classList.remove('bg-gray-500', 'opacity-50'));
+      testimonialDots.forEach((d, i) => {
+        if (!d.classList.contains('active')) d.classList.add('bg-gray-500', 'opacity-50');
+      });
+    });
+  });
   // Re-attach listeners every time Testimonials section is shown
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
