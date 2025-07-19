@@ -149,8 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentSlide = 0;
   function showSlide(index) {
     slides.forEach((slide, i) => {
-      slide.style.opacity = i === index ? '1' : '0';
-      slide.style.transform = i === index ? 'translateX(0)' : (i < index ? 'translateX(-40px)' : 'translateX(40px)');
+      if (i === index) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
       // Hide all testimonial-more and reset readmore button for hidden slides
       if (i !== index) {
         const more = slide.querySelector('.testimonial-more');
