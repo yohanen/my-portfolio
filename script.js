@@ -110,43 +110,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Enhanced testimonials carousel (fade/slide)
-  const slides = document.querySelectorAll('.testimonial-slide');
-  let currentSlide = 0;
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.style.opacity = i === index ? '1' : '0';
-      slide.style.transform = i === index ? 'translateX(0)' : (i < index ? 'translateX(-40px)' : 'translateX(40px)');
-      // Hide all testimonial-more and reset readmore button for hidden slides
-      if (i !== index) {
-        const more = slide.querySelector('.testimonial-more');
-        const btn = slide.querySelector('.testimonial-readmore');
-        if (more) more.classList.add('hidden');
-        if (btn) btn.textContent = 'Read More';
-      }
-    });
-    currentSlide = index;
-  }
-  function nextSlide() {
-    let next = (currentSlide + 1) % slides.length;
-    showSlide(next);
-  }
-  function prevSlide() {
-    let prev = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(prev);
-  }
-  // Event delegation for testimonial navigation and read more
-  const testimonialSlider = document.getElementById('testimonialSlider');
-  if (testimonialSlider) {
-    testimonialSlider.addEventListener('click', function(e) {
-      if (e.target && e.target.id === 'nextSlideBtn') {
-        nextSlide();
-      } else if (e.target && e.target.id === 'prevSlideBtn') {
-        prevSlide();
-      } else if (e.target && e.target.classList.contains('testimonial-readmore')) {
-        const slide = slides[currentSlide];
-        const more = slide.querySelector('.testimonial-more');
-        const btn = slide.querySelector('.testimonial-readmore');
+  // New Testimonial Slider Logic
+  (function() {
+    const items = document.querySelectorAll('#testimonial-content .testimonial-item');
+    const prevBtn = document.getElementById('testimonial-prev');
+    const nextBtn = document.getElementById('testimonial-next');
+    let current = 0;
+    function show(index) {
+      items.forEach((item, i) => {
+        if (i === index) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+          // Always hide more text when switching
+          const more = item.querySelector('.testimonial-more');
+          const btn = item.querySelector('.testimonial-readmore');
+          if (more) more.classList.add('hidden');
+          if (btn) btn.textContent = 'Read More';
+        }
+      });
+      current = index;
+    }
+    if (prevBtn && nextBtn && items.length) {
+      prevBtn.addEventListener('click', () => {
+        show((current - 1 + items.length) % items.length);
+      });
+      nextBtn.addEventListener('click', () => {
+        show((current + 1) % items.length);
+      });
+    }
+    // Read More toggle
+    document.getElementById('testimonial-content').addEventListener('click', function(e) {
+      if (e.target && e.target.classList.contains('testimonial-readmore')) {
+        const item = items[current];
+        const more = item.querySelector('.testimonial-more');
+        const btn = item.querySelector('.testimonial-readmore');
         if (more && btn) {
           if (more.classList.contains('hidden')) {
             more.classList.remove('hidden');
@@ -158,7 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
-  }
-  showSlide(0);
-  setInterval(nextSlide, 7000);
+    show(0);
+  })();
 }); 
