@@ -7,6 +7,26 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    // Inline copyEmail function for email copy button
+    function copyEmail() {
+      var email = document.getElementById('emailText').textContent;
+      navigator.clipboard.writeText(email).then(function() {
+        alert('✅ Email copied to clipboard!');
+      });
+    }
+    // Attach theme toggle event
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('themeToggle');
+      if (btn) {
+        btn.addEventListener('click', function() {
+          document.body.classList.toggle('light-mode');
+          var isLight = document.body.classList.contains('light-mode');
+          btn.textContent = isLight ? '🌙 Dark Mode' : '☀️ Light Mode';
+        });
+      }
+    });
+  </script>
 </head>
 <body class="bg-gray-900 text-white font-sans transition-colors duration-500">
   <!-- Header -->
@@ -20,7 +40,7 @@
 
   <div class="flex min-h-screen">
     <!-- Sidebar Navigation -->
-    <aside class="bg-gray-800 w-64 min-h-full hidden md:flex flex-col py-8 px-4 fixed left-0 top-0 z-40 mt-32 rounded-r-2xl shadow-lg">
+    <aside class="bg-gray-800 w-64 min-h-screen hidden md:flex flex-col py-8 px-4 fixed left-0 top-0 z-40 rounded-r-2xl shadow-lg" style="overflow-y:auto;">
       <nav class="flex flex-col space-y-4">
         <a href="#about" class="nav-link text-yellow-300 font-semibold py-2 px-4 rounded hover:bg-yellow-400 hover:text-black transition" data-section="about">About</a>
         <a href="#skills" class="nav-link text-yellow-300 font-semibold py-2 px-4 rounded hover:bg-yellow-400 hover:text-black transition" data-section="skills">Skills</a>
@@ -38,7 +58,7 @@
     </aside>
     <!-- Hamburger for mobile -->
     <div class="md:hidden fixed top-6 left-4 z-50">
-      <button id="mobile-nav-toggle" class="text-yellow-300 text-3xl p-2 rounded bg-gray-800 shadow-lg focus:outline-none">
+      <button id="mobile-nav-toggle" class="text-yellow-300 text-3xl p-2 rounded bg-gray-800 shadow-lg focus:outline-none" aria-label="Open navigation menu">
         <i class="fas fa-bars"></i>
       </button>
       <div id="mobile-nav" class="hidden absolute top-12 left-0 bg-gray-800 rounded-r-2xl shadow-lg w-56 flex flex-col space-y-4 py-6 px-4">
@@ -72,7 +92,7 @@
             src="https://drive.google.com/file/d/19K94zc3NuZLh2TSmBFSRs6LN9SfPhUgj/preview" 
             width="100%" height="360" 
             allow="autoplay" 
-            class="rounded shadow">
+            class="rounded shadow" aria-label="Introduction video">
           </iframe>
         </div>
         <div class="mt-10">
@@ -93,7 +113,7 @@
               src="https://drive.google.com/file/d/1YxK9ENfFz8NJLjLTICLQBiYakvWWR1K-/preview" 
               width="100%" height="360" 
               allow="autoplay" 
-              class="rounded shadow">
+              class="rounded shadow" aria-label="Degree certificate video">
             </iframe>
           </div>
         </div>
@@ -166,30 +186,32 @@
       <section id="resume" class="section-content hidden">
         <h2 class="text-yellow-400 text-2xl font-semibold mb-4">📄 Download Resume</h2>
         <p class="mb-2">You can download my resume here:</p>
-        <a href="Resume.pdf" target="_blank" class="text-yellow-400 hover:underline">Download Resume (PDF)</a>
+        <a href="Resume.pdf" target="_blank" class="text-yellow-400 hover:underline" download>Download Resume (PDF)</a>
+        <span class="text-xs text-gray-500">(If the file is missing, please contact me for a copy.)</span>
       </section>
       <section id="testimonials" class="section-content hidden">
         <h2 class="text-yellow-400 text-2xl font-semibold mb-6">📜 Testimonials</h2>
         <div class="relative max-w-xl mx-auto">
           <div id="testimonialSlider" class="relative overflow-hidden h-64">
             <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 opacity-100">
-              <p class="italic text-gray-300 mb-4">“Mr. Yohanen Dinagde Ejeta is a highly dedicated and disciplined individual... intellectually curious throughout his BCA program.”</p>
-              <p class="text-sm font-semibold text-yellow-300">— Prof. (Dr.) Sonal Sharma<br>Director, Uttaranchal University</p>
+              <p class="italic text-gray-300 mb-4 testimonial-preview">Mr. Yohanen Dinagde Ejeta is a highly dedicated and disciplined individual who consistently demonstrated strong academic commitment and intellectual curiosity throughout his Bachelor of Computer Applications (BCA) program. <span class="testimonial-more hidden">His ability to think outside the box, problem-solving mindset, and continuous pursuit of excellence made him stand out among his peers. He has shown exceptional performance in academics, research projects, and student-led initiatives. He was an active member of several key groups including the Robotics Club, Cyber Security Forum, Coding and Innovation Cell, and the Open-Source Community. His leadership, communication skills, and technical foundation make him a strong candidate for scholarships, higher studies, and tech jobs alike.</span></p>
+              <button class="testimonial-readmore text-yellow-400 underline text-sm mb-2">Read More</button>
+              <p class="text-sm font-semibold text-yellow-300">— Prof. (Dr.) Sonal Sharma<br><span class="text-gray-400">Director, Uttaranchal School of Computing Sciences<br>Uttaranchal University, Dehradun</span></p>
             </div>
             <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 opacity-0">
-              <p class="italic text-gray-300 mb-4">“Yohanen has shown exceptional performance in academics, research projects, and student-led initiatives... an active member of several key tech groups.”</p>
-              <p class="text-sm font-semibold text-yellow-300">— Dr. Sameer Dev Sharma<br>HoD, Uttaranchal University</p>
+              <p class="italic text-gray-300 mb-4 testimonial-preview">Yohanen has shown exceptional performance in academics, research projects, and student-led initiatives. <span class="testimonial-more hidden">He was an active member of several key tech groups and contributed to the university's innovation culture. His technical skills and collaborative spirit are commendable.</span></p>
+              <button class="testimonial-readmore text-yellow-400 underline text-sm mb-2">Read More</button>
+              <p class="text-sm font-semibold text-yellow-300">— Dr. Sameer Dev Sharma<br><span class="text-gray-400">HoD, Uttaranchal School of Computing Sciences<br>Uttaranchal University, Dehradun</span></p>
             </div>
             <div class="testimonial-slide absolute inset-0 transition-opacity duration-700 opacity-0">
-              <p class="italic text-gray-300 mb-4">“Yohanen has shown exceptional performance in academics, research projects, and student-led initiatives... an active member of several key tech groups.”</p>
-              <p class="text-sm font-semibold text-yellow-300">— Mrs. Divya Singh<br>Class Coordinator (3rd Year), Uttaranchal University</p>
+              <p class="italic text-gray-300 mb-4 testimonial-preview">Yohanen is an active member of several key tech groups and has shown exceptional performance in academics and research. <span class="testimonial-more hidden">He is a reliable team player and a quick learner, always ready to take on new challenges and responsibilities.</span></p>
+              <button class="testimonial-readmore text-yellow-400 underline text-sm mb-2">Read More</button>
+              <p class="text-sm font-semibold text-yellow-300">— Mrs. Divya Singh<br><span class="text-gray-400">Class Coordinator (3rd Year)<br>Uttaranchal University, Dehradun</span></p>
             </div>
-          </div>
-          <div class="absolute inset-y-0 left-0 flex items-center">
-            <button class="text-yellow-400 text-xl px-3" id="prevSlideBtn">&#8592;</button>
-          </div>
-          <div class="absolute inset-y-0 right-0 flex items-center">
-            <button class="text-yellow-400 text-xl px-3" id="nextSlideBtn">&#8594;</button>
+            <div class="flex justify-between items-center mt-4 z-10 relative">
+              <button class="text-yellow-400 text-2xl px-4 py-2 rounded-full bg-gray-900 shadow hover:bg-yellow-400 hover:text-black transition" id="prevSlideBtn" aria-label="Previous testimonial">&#8592;</button>
+              <button class="text-yellow-400 text-2xl px-4 py-2 rounded-full bg-gray-900 shadow hover:bg-yellow-400 hover:text-black transition" id="nextSlideBtn" aria-label="Next testimonial">&#8594;</button>
+            </div>
           </div>
         </div>
       </section>
@@ -344,7 +366,7 @@
       <section id="location" class="section-content hidden">
         <h2 class="text-yellow-400 text-2xl font-semibold mb-4">📍 My Location</h2>
         <p class="mb-4">I studied at Uttaranchal University and am currently based in India.</p>
-        <iframe class="w-full h-64 rounded shadow" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.6881643665355!2d77.98079241544655!3d30.32556481134586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929cb5e1d0629%3A0xbed7e901f43ad7d0!2sUttaranchal%20University!5e0!3m2!1sen!2sin!4v1625032001234!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="w-full h-64 rounded shadow" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.6881643665355!2d77.98079241544655!3d30.32556481134586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929cb5e1d0629%3A0xbed7e901f43ad7d0!2sUttaranchal%20University!5e0!3m2!1sen!2sin!4v1625032001234!5m2!1sen!2sin" allowfullscreen="" loading="lazy" aria-label="Map of Uttaranchal University"></iframe>
       </section>
       <section id="contact" class="section-content hidden">
         <h2 class="text-yellow-400 text-2xl font-semibold mb-4">✉ Contact</h2>
