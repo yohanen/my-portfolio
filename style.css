@@ -426,3 +426,43 @@ body.light-mode .skill-bar {
 body.light-mode .skill-bar-fill {
   background: linear-gradient(90deg, #4f46e5 0%, #6366f1 100%) !important;
 } 
+
+/* Light mode for inner cards (Blog, Projects, etc.) */
+body.light-mode .bg-gray-700,
+body.light-mode .bg-gray-600 {
+  background: #e5e7eb !important;
+  border-color: rgba(0,0,0,0.1) !important;
+}
+body.light-mode .bg-gray-700 *,
+body.light-mode .bg-gray-600 * {
+  color: #232946 !important;
+}
+body.light-mode .bg-gray-700 a,
+body.light-mode .bg-gray-600 a {
+  color: #4f46e5 !important;
+}
+
+/* Light mode for testimonial slider */
+body.light-mode #testimonial-slider {
+  background: #e5e7eb !important;
+}
+body.light-mode #testimonial-prev,
+body.light-mode #testimonial-next {
+  background: #232946 !important;
+  color: #fff !important;
+}
+
+/* Light mode for contact form */
+body.light-mode #contact form {
+  background: #e5e7eb !important;
+}
+body.light-mode #contact input,
+body.light-mode #contact textarea {
+  background: #fff !important;
+  border-color: #d1d5db !important;
+  color: #232946 !important;
+}
+body.light-mode #contact input:focus,
+body.light-mode #contact textarea:focus {
+  ring-color: #4f46e5 !important;
+} 
