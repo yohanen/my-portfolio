@@ -31,30 +31,41 @@
 </head>
 <body class="bg-gray-900 text-white font-sans transition-colors duration-500">
   <!-- Header -->
-  <header class="text-center py-10 bg-gradient-to-r from-indigo-800 to-gray-900 relative">
-    <button id="themeToggle" class="absolute top-4 right-4 px-4 py-1 border border-yellow-300 rounded-full font-bold text-yellow-300 hover:bg-yellow-300 hover:text-black transition">
-      ☀️ Light Mode
-    </button>
-    <h1 class="text-4xl font-bold mb-2">Yohanen Dinagde Ejeta</h1>
-    <p class="text-lg">Tech Enthusiast | Machine Learning & Data Science | Open to Internships, Jobs, Remote Roles & Scholarship Opportunities</p>
+  <header class="hero-header relative flex flex-col items-center justify-center text-center py-16 md:py-24 overflow-hidden">
+    <div class="absolute inset-0 w-full h-full hero-bg-gradient z-0"></div>
+    <div class="relative z-10">
+      <button id="themeToggle" class="absolute top-4 right-4 px-4 py-1 border border-yellow-300 rounded-full font-bold text-yellow-300 hover:bg-yellow-300 hover:text-black transition">
+        ☀️ Light Mode
+      </button>
+      <h1 class="hero-title text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-yellow-400 via-fuchsia-500 to-blue-500 bg-clip-text text-transparent mb-4 drop-shadow-lg">
+        Yohanen Dinagde Ejeta
+      </h1>
+      <p class="hero-subtitle text-xl md:text-2xl font-medium text-white/90 mb-4 inline-block px-6 py-2 rounded-lg shadow-lg bg-gradient-to-r from-blue-900/60 via-indigo-800/60 to-fuchsia-800/60 border border-yellow-300">
+        Tech Enthusiast | Machine Learning & Data Science | <span class="text-yellow-300 font-bold">Open to Internships, Jobs, Remote Roles & Scholarship Opportunities</span>
+      </p>
+    </div>
+    <!-- Animated SVG background shapes -->
+    <svg class="absolute left-0 top-0 w-full h-full z-0 pointer-events-none" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#facc15" fill-opacity="0.08" d="M0,160L60,170.7C120,181,240,203,360,197.3C480,192,600,160,720,133.3C840,107,960,85,1080,101.3C1200,117,1320,171,1380,197.3L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+    </svg>
   </header>
 
   <div class="flex min-h-screen">
     <!-- Sidebar Navigation -->
-    <aside class="bg-gray-800 w-64 min-h-screen hidden md:flex flex-col py-8 px-4 fixed left-0 top-0 z-40 rounded-r-2xl shadow-lg" style="overflow-y:auto; max-height: 90vh;">
-      <nav class="flex flex-col space-y-4">
-        <a href="#about" class="nav-link text-yellow-300 font-semibold py-2 px-4 rounded hover:bg-yellow-400 hover:text-black transition" data-section="about">About</a>
-        <a href="#skills" class="nav-link text-yellow-300 font-semibold py-2 px-4 rounded hover:bg-yellow-400 hover:text-black transition" data-section="skills">Skills</a>
-        <a href="#blog" class="nav-link text-yellow-300 font-semibold py-2 px-4 rounded hover:bg-yellow-400 hover:text-black transition" data-section="blog">Blog</a>
-        <a href="#projects" class="nav-link text-yellow-300 font-semibold py-2 px-4 rounded hover:bg-yellow-400 hover:text-black transition" data-section="projects">Projects</a>
-        <a href="#resume" class="nav-link text-yellow-300 font-semibold py-2 px-4 rounded hover:bg-yellow-400 hover:text-black transition" data-section="resume">Resume</a>
-        <a href="#testimonials" class="nav-link text-yellow-300 font-semibold py-2 px-4 rounded hover:bg-yellow-400 hover:text-black transition" data-section="testimonials">Testimonials</a>
-        <a href="#education" class="nav-link text-yellow-300 font-semibold py-2 px-4 rounded hover:bg-yellow-400 hover:text-black transition" data-section="education">Education</a>
-        <a href="#languages" class="nav-link text-yellow-300 font-semibold py-2 px-4 rounded hover:bg-yellow-400 hover:text-black transition" data-section="languages">Languages</a>
-        <a href="#hobbies" class="nav-link text-yellow-300 font-semibold py-2 px-4 rounded hover:bg-yellow-400 hover:text-black transition" data-section="hobbies">Hobbies</a>
-        <a href="#achievements" class="nav-link text-yellow-300 font-semibold py-2 px-4 rounded hover:bg-yellow-400 hover:text-black transition" data-section="achievements">Achievements</a>
-        <a href="#location" class="nav-link text-yellow-300 font-semibold py-2 px-4 rounded hover:bg-yellow-400 hover:text-black transition" data-section="location">Location</a>
-        <a href="#contact" class="nav-link text-yellow-300 font-semibold py-2 px-4 rounded hover:bg-yellow-400 hover:text-black transition" data-section="contact">Contact</a>
+    <aside class="bg-gray-800 glass-nav w-64 min-h-screen hidden md:flex flex-col py-10 px-6 fixed left-0 top-0 z-40 rounded-r-2xl shadow-2xl" style="backdrop-filter: blur(18px); background: rgba(31,41,55,0.75); box-shadow: 0 8px 32px 0 #0005;">
+      <nav class="flex flex-col gap-5">
+        <a href="#about" class="nav-link flex items-center gap-3 text-yellow-300 font-semibold py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black transition" data-section="about"><i class="fas fa-user"></i> About</a>
+        <a href="#skills" class="nav-link flex items-center gap-3 text-yellow-300 font-semibold py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black transition" data-section="skills"><i class="fas fa-tools"></i> Skills</a>
+        <a href="#blog" class="nav-link flex items-center gap-3 text-yellow-300 font-semibold py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black transition" data-section="blog"><i class="fas fa-pen-nib"></i> Blog</a>
+        <a href="#projects" class="nav-link flex items-center gap-3 text-yellow-300 font-semibold py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black transition" data-section="projects"><i class="fas fa-project-diagram"></i> Projects</a>
+        <a href="#resume" class="nav-link flex items-center gap-3 text-yellow-300 font-semibold py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black transition" data-section="resume"><i class="fas fa-file-alt"></i> Resume</a>
+        <a href="#testimonials" class="nav-link flex items-center gap-3 text-yellow-300 font-semibold py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black transition" data-section="testimonials"><i class="fas fa-comment-dots"></i> Testimonials</a>
+        <a href="#education" class="nav-link flex items-center gap-3 text-yellow-300 font-semibold py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black transition" data-section="education"><i class="fas fa-graduation-cap"></i> Education</a>
+        <a href="#languages" class="nav-link flex items-center gap-3 text-yellow-300 font-semibold py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black transition" data-section="languages"><i class="fas fa-language"></i> Languages</a>
+        <a href="#hobbies" class="nav-link flex items-center gap-3 text-yellow-300 font-semibold py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black transition" data-section="hobbies"><i class="fas fa-heart"></i> Hobbies</a>
+        <a href="#achievements" class="nav-link flex items-center gap-3 text-yellow-300 font-semibold py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black transition" data-section="achievements"><i class="fas fa-trophy"></i> Achievements</a>
+        <a href="#location" class="nav-link flex items-center gap-3 text-yellow-300 font-semibold py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black transition" data-section="location"><i class="fas fa-map-marker-alt"></i> Location</a>
+        <a href="#contact" class="nav-link flex items-center gap-3 text-yellow-300 font-semibold py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black transition" data-section="contact"><i class="fas fa-envelope"></i> Contact</a>
       </nav>
     </aside>
     <!-- Hamburger for mobile -->
@@ -79,92 +90,106 @@
     </div>
     <!-- Main Content -->
     <main class="flex-1 md:ml-64 pt-8 px-4">
-      <section id="about" class="section-content">
-        <h2 class="text-yellow-400 text-2xl font-semibold mb-4">✨ About Me</h2>
-        <p class="mb-2">
-          Hi! I'm Yohanen, a recent Bachelor of Computer Application (BCA) graduate from Uttaranchal University. I'm passionate about building real-world tech solutions, exploring new technologies, and contributing to communities that value innovation and learning.
-        </p>
-        <p>
-          I'm particularly interested in projects that combine education, technology, and social good. I enjoy collaborating, solving real-life problems through code, and learning as I go. Whether it’s backend logic or front-end user experiences, I strive to create meaningful impact through technology.
-        </p>
-        <div class="mt-4">
-          <p class="text-sm text-gray-400 mb-2">🎥 Watch My Introduction Video:</p>
-          <iframe 
-            src="https://drive.google.com/file/d/19K94zc3NuZLh2TSmBFSRs6LN9SfPhUgj/preview" 
-            width="100%" height="360" 
-            allow="autoplay" 
-            class="rounded shadow" aria-label="Introduction video">
-          </iframe>
-        </div>
-        <div class="mt-10">
-          <h3 class="text-yellow-400 text-lg font-semibold mb-4">🎓 Graduation Highlight</h3>
-          <div class="grid sm:grid-cols-2 gap-4 mb-8">
-            <div>
-              <img src="assets/graduation_photo1.jpg" alt="Graduation Moment 1" class="rounded-lg shadow-md w-full hover:scale-105 transition-transform duration-300" />
-              <p class="text-base text-yellow-300 text-center font-medium mt-3">✨ With Fellow Graduate – unforgettable moment!</p>
+      <section id="about" class="section-content about-modern mx-auto max-w-4xl mt-8 animate-fadein">
+        <div class="flex flex-col md:flex-row gap-10 items-center">
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 via-fuchsia-500 to-blue-500 text-white text-2xl shadow-lg"><i class="fas fa-user"></i></span>
+              <h2 class="text-3xl font-bold tracking-wide text-yellow-300 mb-0">About Me</h2>
             </div>
-            <div>
-              <img src="assets/graduation_photo2.jpg" alt="Graduation Moment 2" class="rounded-lg shadow-md w-full hover:scale-105 transition-transform duration-300" />
-              <p class="text-base text-yellow-300 text-center font-medium mt-3">🎓 Holding my BCA certificate with pride!</p>
-            </div>
+            <p class="mb-3 text-lg text-white/90">Hi! I'm Yohanen, a recent Bachelor of Computer Application (BCA) graduate from Uttaranchal University. I'm passionate about building real-world tech solutions, exploring new technologies, and contributing to communities that value innovation and learning.</p>
+            <p class="text-base text-gray-300">I'm particularly interested in projects that combine education, technology, and social good. I enjoy collaborating, solving real-life problems through code, and learning as I go. Whether it’s backend logic or front-end user experiences, I strive to create meaningful impact through technology.</p>
           </div>
-          <div>
-            <h4 class="text-lg font-semibold text-yellow-300 mb-2">📽️Receive My Degree</h4>
-            <iframe 
-              src="https://drive.google.com/file/d/1YxK9ENfFz8NJLjLTICLQBiYakvWWR1K-/preview" 
-              width="100%" height="360" 
-              allow="autoplay" 
-              class="rounded shadow" aria-label="Degree certificate video">
-            </iframe>
+          <div class="flex-1 flex flex-col gap-6 items-center">
+            <div class="w-full">
+              <p class="text-sm text-gray-400 mb-2 font-semibold">🎥 Watch My Introduction Video:</p>
+              <div class="rounded-xl overflow-hidden shadow-lg border border-yellow-300/30">
+                <iframe src="https://drive.google.com/file/d/19K94zc3NuZLh2TSmBFSRs6LN9SfPhUgj/preview" width="100%" height="220" allow="autoplay" class="w-full h-56 md:h-60"></iframe>
+              </div>
+            </div>
+            <div class="w-full">
+              <h3 class="text-lg font-semibold text-yellow-300 mb-2 flex items-center gap-2"><i class="fas fa-graduation-cap"></i> Graduation Highlight</h3>
+              <div class="grid grid-cols-2 gap-4 mb-4">
+                <img src="assets/graduation_photo1.jpg" alt="Graduation Moment 1" class="rounded-lg shadow-md w-full object-cover h-32 md:h-36 hover:scale-105 transition-transform duration-300" />
+                <img src="assets/graduation_photo2.jpg" alt="Graduation Moment 2" class="rounded-lg shadow-md w-full object-cover h-32 md:h-36 hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="rounded-xl overflow-hidden shadow-lg border border-yellow-300/30">
+                <iframe src="https://drive.google.com/file/d/1YxK9ENfFz8NJLjLTICLQBiYakvWWR1K-/preview" width="100%" height="180" allow="autoplay" class="w-full h-44 md:h-48"></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <section id="skills" class="section-content hidden">
-        <h2 class="text-yellow-400 text-2xl font-semibold mb-4">🔧 Skills</h2>
-        <div class="flex flex-wrap gap-3">
-          <span class="bg-gray-700 px-3 py-1 rounded">Python</span>
-          <span class="bg-gray-700 px-3 py-1 rounded">PHP</span>
-          <span class="bg-gray-700 px-3 py-1 rounded">MySQL</span>
-          <span class="bg-gray-700 px-3 py-1 rounded">CodeIgniter</span>
-          <span class="bg-gray-700 px-3 py-1 rounded">HTML</span>
-          <span class="bg-gray-700 px-3 py-1 rounded">CSS</span>
-          <span class="bg-gray-700 px-3 py-1 rounded">JavaScript</span>
-          <span class="bg-gray-700 px-3 py-1 rounded">Git</span>
-          <span class="bg-gray-700 px-3 py-1 rounded">GitHub</span>
-          <span class="bg-gray-700 px-3 py-1 rounded">Machine Learning</span>
-          <span class="bg-gray-700 px-3 py-1 rounded">Communication</span>
-          <span class="bg-gray-700 px-3 py-1 rounded">Critical Thinking</span>
-          <span class="bg-gray-700 px-3 py-1 rounded">Teamwork</span>
-          <span class="bg-gray-700 px-3 py-1 rounded">Problem Solving</span>
-          <span class="bg-gray-700 px-3 py-1 rounded">Web Development</span>
+      <!-- Modernized Skills Section -->
+      <section id="skills" class="section-content glass-card mx-auto max-w-4xl mt-8 animate-fadein">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 via-fuchsia-500 to-blue-500 text-white text-2xl shadow-lg"><i class="fas fa-tools"></i></span>
+          <h2 class="text-2xl font-bold tracking-wide text-yellow-300 mb-0">Skills</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-3"><i class="fab fa-python text-2xl text-yellow-300"></i><span>Python</span></div>
+            <div class="flex items-center gap-3"><i class="fab fa-php text-2xl text-indigo-300"></i><span>PHP</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-database text-2xl text-blue-300"></i><span>MySQL</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-code text-2xl text-pink-300"></i><span>CodeIgniter</span></div>
+            <div class="flex items-center gap-3"><i class="fab fa-html5 text-2xl text-orange-300"></i><span>HTML</span></div>
+            <div class="flex items-center gap-3"><i class="fab fa-css3-alt text-2xl text-blue-400"></i><span>CSS</span></div>
+            <div class="flex items-center gap-3"><i class="fab fa-js text-2xl text-yellow-200"></i><span>JavaScript</span></div>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-3"><i class="fab fa-git-alt text-2xl text-red-300"></i><span>Git</span></div>
+            <div class="flex items-center gap-3"><i class="fab fa-github text-2xl text-gray-300"></i><span>GitHub</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-robot text-2xl text-green-300"></i><span>Machine Learning</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-comments text-2xl text-yellow-200"></i><span>Communication</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-brain text-2xl text-purple-300"></i><span>Critical Thinking</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-users text-2xl text-blue-200"></i><span>Teamwork</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-lightbulb text-2xl text-yellow-300"></i><span>Problem Solving</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-globe text-2xl text-teal-300"></i><span>Web Development</span></div>
+          </div>
+        </div>
+        <!-- Animated skill bars (reuse your JS logic) -->
+        <div class="mt-8">
+          <div class="mb-4">
+            <div class="flex justify-between mb-1"><span>Python</span><span class="text-yellow-300 font-bold">95%</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:0"></div></div>
+          </div>
+          <div class="mb-4">
+            <div class="flex justify-between mb-1"><span>PHP</span><span class="text-yellow-300 font-bold">85%</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:0"></div></div>
+          </div>
+          <!-- Add more skill bars as needed -->
         </div>
       </section>
-      <section id="blog" class="section-content hidden">
-        <h2 class="text-yellow-400 text-2xl font-semibold mb-6">📝 Blog</h2>
+
+      <!-- Modernized Blog Section -->
+      <section id="blog" class="section-content glass-card mx-auto max-w-4xl mt-8 animate-fadein">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 via-fuchsia-500 to-blue-500 text-white text-2xl shadow-lg"><i class="fas fa-pen-nib"></i></span>
+          <h2 class="text-2xl font-bold tracking-wide text-yellow-300 mb-0">Blog</h2>
+        </div>
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition">
+          <div class="bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border border-yellow-300/20">
             <h3 class="text-lg font-semibold text-yellow-300 mb-2">5 Lessons I Learned Building My First Full-Stack Project</h3>
-            <p class="text-sm text-gray-300 mb-3">
-              A deep dive into lessons learned while developing the Smart School Management System using CodeIgniter and MySQL.
-            </p>
-            <a href="#projects" class="text-yellow-400 hover:underline text-sm">Read More →</a>
+            <p class="text-sm text-gray-300 mb-3">A deep dive into lessons learned while developing the Smart School Management System using CodeIgniter and MySQL.</p>
+            <a href="#projects" class="text-yellow-400 hover:underline text-sm font-semibold">Read More →</a>
           </div>
-          <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition">
+          <div class="bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border border-yellow-300/20">
             <h3 class="text-lg font-semibold text-yellow-300 mb-2">Why I Love Machine Learning</h3>
-            <p class="text-sm text-gray-300 mb-3">
-              Reflections on how AI and machine learning can transform education and contribute to social good.
-            </p>
-            <a href="#about" class="text-yellow-400 hover:underline text-sm">Read More →</a>
+            <p class="text-sm text-gray-300 mb-3">Reflections on how AI and machine learning can transform education and contribute to social good.</p>
+            <a href="#about" class="text-yellow-400 hover:underline text-sm font-semibold">Read More →</a>
           </div>
         </div>
       </section>
-      <section id="projects" class="section-content hidden">
-        <h2 class="text-yellow-400 text-2xl font-semibold mb-6">📚 Featured Project</h2>
-        <div class="bg-gray-700 p-5 rounded-lg shadow-md">
+
+      <!-- Modernized Projects Section -->
+      <section id="projects" class="section-content glass-card mx-auto max-w-4xl mt-8 animate-fadein">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 via-fuchsia-500 to-blue-500 text-white text-2xl shadow-lg"><i class="fas fa-project-diagram"></i></span>
+          <h2 class="text-2xl font-bold tracking-wide text-yellow-300 mb-0">Projects</h2>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-xl shadow-lg border border-yellow-300/20 mb-6">
           <h3 class="text-xl font-semibold text-yellow-300 mb-2">Smart School Management System</h3>
-          <p class="text-sm text-gray-300 mb-3">
-            A full-stack web application built using <strong>CodeIgniter (PHP)</strong>, <strong>MySQL</strong>, <strong>HTML</strong>, and <strong>CSS</strong>. It provides dashboards for Admin, Teacher, Student, and Parent roles — including features like attendance, library, grades, and messaging.
-          </p>
+          <p class="text-sm text-gray-300 mb-3">A full-stack web application built using <strong>CodeIgniter (PHP)</strong>, <strong>MySQL</strong>, <strong>HTML</strong>, and <strong>CSS</strong>. It provides dashboards for Admin, Teacher, Student, and Parent roles — including features like attendance, library, grades, and messaging.</p>
           <div class="flex flex-wrap gap-2 mb-3 text-sm text-white">
             <span class="bg-gray-600 px-2 py-1 rounded">PHP</span>
             <span class="bg-gray-600 px-2 py-1 rounded">CodeIgniter</span>
@@ -173,25 +198,43 @@
             <span class="bg-gray-600 px-2 py-1 rounded">CSS</span>
           </div>
           <div class="grid md:grid-cols-2 gap-4 mb-4">
-            <img src="assets/loginpage.png" alt="Login Page" class="rounded shadow" />
-            <img src="assets/admindashboard.png" alt="Admin Dashboard" class="rounded shadow" />
-            <img src="assets/teacherdashboard.png" alt="Teacher Dashboard" class="rounded shadow" />
-            <img src="assets/parentdashboard.png" alt="Parent Dashboard" class="rounded shadow" />
+            <div class="relative group overflow-hidden rounded-xl">
+              <img src="assets/loginpage.png" alt="Login Page" class="rounded shadow w-full object-cover h-40 group-hover:scale-105 transition-transform duration-300" />
+              <div class="absolute inset-0 bg-gradient-to-t from-yellow-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
+                <a href="#" class="btn bg-yellow-400 text-black font-bold px-4 py-2 rounded-full shadow-lg mr-2">Demo</a>
+                <a href="https://github.com/yohanen/smart-school-management-system" target="_blank" class="btn bg-gray-900 text-yellow-300 font-bold px-4 py-2 rounded-full shadow-lg">GitHub</a>
+              </div>
+            </div>
+            <div class="relative group overflow-hidden rounded-xl">
+              <img src="assets/admindashboard.png" alt="Admin Dashboard" class="rounded shadow w-full object-cover h-40 group-hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div class="relative group overflow-hidden rounded-xl">
+              <img src="assets/teacherdashboard.png" alt="Teacher Dashboard" class="rounded shadow w-full object-cover h-40 group-hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div class="relative group overflow-hidden rounded-xl">
+              <img src="assets/parentdashboard.png" alt="Parent Dashboard" class="rounded shadow w-full object-cover h-40 group-hover:scale-105 transition-transform duration-300" />
+            </div>
           </div>
-          <a href="https://github.com/yohanen/smart-school-management-system" target="_blank"
-            class="inline-block bg-yellow-400 text-black px-4 py-2 rounded font-semibold hover:bg-yellow-300 transition">
-            🔗 View on GitHub
-          </a>
         </div>
       </section>
-      <section id="resume" class="section-content hidden">
-        <h2 class="text-yellow-400 text-2xl font-semibold mb-4">📄 Download Resume</h2>
+
+      <!-- Modernized Resume Section -->
+      <section id="resume" class="section-content glass-card mx-auto max-w-2xl mt-8 animate-fadein">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 via-fuchsia-500 to-blue-500 text-white text-2xl shadow-lg"><i class="fas fa-file-alt"></i></span>
+          <h2 class="text-2xl font-bold tracking-wide text-yellow-300 mb-0">Resume</h2>
+        </div>
         <p class="mb-2">You can download my resume here:</p>
-        <a href="Resume.pdf" target="_blank" class="text-yellow-400 hover:underline" download>Download Resume (PDF)</a>
-        <span class="text-xs text-gray-500">(If the file is missing, please contact me for a copy.)</span>
+        <a href="Resume.pdf" target="_blank" class="btn bg-yellow-400 text-black font-bold px-6 py-2 rounded-full shadow-lg hover:bg-yellow-300 transition flex items-center gap-2" download><i class="fas fa-download"></i> Download Resume (PDF)</a>
+        <span class="text-xs text-gray-500 block mt-2">(If the file is missing, please contact me for a copy.)</span>
       </section>
-      <section id="testimonials" class="section-content hidden">
-        <h2 class="text-yellow-400 text-2xl font-semibold mb-6">📜 Testimonials</h2>
+
+      <!-- Modernized Testimonials Section (already modern, just ensure card style) -->
+      <section id="testimonials" class="section-content glass-card mx-auto max-w-2xl mt-8 animate-fadein">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 via-fuchsia-500 to-blue-500 text-white text-2xl shadow-lg"><i class="fas fa-comment-dots"></i></span>
+          <h2 class="text-2xl font-bold tracking-wide text-yellow-300 mb-0">Testimonials</h2>
+        </div>
         <div id="testimonial-slider" class="max-w-xl mx-auto flex flex-col items-center">
           <div id="testimonial-content" class="w-full text-center">
             <!-- Testimonial 1 (default visible) -->
@@ -219,8 +262,13 @@
           </div>
         </div>
       </section>
-      <section id="education" class="section-content hidden">
-        <h2 class="text-yellow-400 text-3xl font-bold mb-10 text-center">🎓 Education Background</h2>
+
+      <!-- Modernized Education Section -->
+      <section id="education" class="section-content glass-card mx-auto max-w-3xl mt-8 animate-fadein">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 via-fuchsia-500 to-blue-500 text-white text-2xl shadow-lg"><i class="fas fa-graduation-cap"></i></span>
+          <h2 class="text-2xl font-bold tracking-wide text-yellow-300 mb-0">Education</h2>
+        </div>
         <div class="border-l-4 border-yellow-400 pl-10 relative space-y-12">
           <div class="relative">
             <div class="absolute w-4 h-4 bg-yellow-400 rounded-full -left-6 top-1.5"></div>
@@ -252,8 +300,13 @@
           </div>
         </div>
       </section>
-      <section id="languages" class="section-content hidden">
-        <h2 class="text-3xl font-bold text-center mb-8 text-yellow-600">Language Skills</h2>
+
+      <!-- Modernized Languages Section -->
+      <section id="languages" class="section-content glass-card mx-auto max-w-2xl mt-8 animate-fadein">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 via-fuchsia-500 to-blue-500 text-white text-2xl shadow-lg"><i class="fas fa-language"></i></span>
+          <h2 class="text-2xl font-bold tracking-wide text-yellow-300 mb-0">Languages</h2>
+        </div>
         <div class="grid md:grid-cols-2 gap-8">
           <div>
             <h3 class="text-xl font-semibold mb-4">Mother Tongue</h3>
@@ -281,8 +334,13 @@
           <em>Level Reference: A1–A2: Basic | B1–B2: Independent | C1–C2: Proficient</em>
         </p>
       </section>
-      <section id="hobbies" class="section-content hidden">
-        <h2 class="text-3xl font-bold text-center text-yellow-600 mb-10">Hobbies & Interests</h2>
+
+      <!-- Modernized Hobbies Section -->
+      <section id="hobbies" class="section-content glass-card mx-auto max-w-2xl mt-8 animate-fadein">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 via-fuchsia-500 to-blue-500 text-white text-2xl shadow-lg"><i class="fas fa-heart"></i></span>
+          <h2 class="text-2xl font-bold tracking-wide text-yellow-300 mb-0">Hobbies & Interests</h2>
+        </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center text-gray-700">
           <div>
             <img src="https://img.icons8.com/ios-filled/50/4a4a4a/bicycle.png" class="mx-auto mb-3" alt="Cycling">
@@ -310,8 +368,13 @@
           </div>
         </div>
       </section>
-      <section id="achievements" class="section-content hidden">
-        <h2 class="text-yellow-400 text-2xl font-bold mb-6">🏆 Achievements & Involvement</h2>
+
+      <!-- Modernized Achievements Section -->
+      <section id="achievements" class="section-content glass-card mx-auto max-w-2xl mt-8 animate-fadein">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 via-fuchsia-500 to-blue-500 text-white text-2xl shadow-lg"><i class="fas fa-trophy"></i></span>
+          <h2 class="text-2xl font-bold tracking-wide text-yellow-300 mb-0">Achievements</h2>
+        </div>
         <details class="group mb-6 transition-all duration-300">
           <summary class="cursor-pointer text-lg font-semibold text-white flex items-center justify-between">
             <span>🎖️ Awards & Honors</span>
@@ -367,13 +430,23 @@
           </ul>
         </details>
       </section>
-      <section id="location" class="section-content hidden">
-        <h2 class="text-yellow-400 text-2xl font-semibold mb-4">📍 My Location</h2>
+
+      <!-- Modernized Location Section -->
+      <section id="location" class="section-content glass-card mx-auto max-w-2xl mt-8 animate-fadein">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 via-fuchsia-500 to-blue-500 text-white text-2xl shadow-lg"><i class="fas fa-map-marker-alt"></i></span>
+          <h2 class="text-2xl font-bold tracking-wide text-yellow-300 mb-0">Location</h2>
+        </div>
         <p class="mb-4">I studied at Uttaranchal University and am currently based in India.</p>
         <iframe class="w-full h-64 rounded shadow" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.6881643665355!2d77.98079241544655!3d30.32556481134586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929cb5e1d0629%3A0xbed7e901f43ad7d0!2sUttaranchal%20University!5e0!3m2!1sen!2sin!4v1625032001234!5m2!1sen!2sin" allowfullscreen="" loading="lazy" aria-label="Map of Uttaranchal University"></iframe>
       </section>
-      <section id="contact" class="section-content hidden">
-        <h2 class="text-yellow-400 text-2xl font-semibold mb-4">✉ Contact</h2>
+
+      <!-- Modernized Contact Section -->
+      <section id="contact" class="section-content glass-card mx-auto max-w-2xl mt-8 animate-fadein">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 via-fuchsia-500 to-blue-500 text-white text-2xl shadow-lg"><i class="fas fa-envelope"></i></span>
+          <h2 class="text-2xl font-bold tracking-wide text-yellow-300 mb-0">Contact</h2>
+        </div>
         <form action="https://formspree.io/f/xovlqwdd" method="POST" class="space-y-4">
           <div>
             <label class="block text-sm font-medium mb-1">Your Name</label>
@@ -411,9 +484,14 @@
     </main>
   </div>
 
-  <!-- Footer -->
-  <footer class="text-center py-4 bg-gray-950 text-sm text-gray-400 mt-10">
-    &copy; 2025 Yohanen Dinagde Ejeta. All rights reserved.
+  <!-- Modernized Footer -->
+  <footer class="text-center py-6 bg-transparent text-sm text-gray-400 mt-10 flex flex-col items-center gap-2">
+    <div class="flex gap-4 mb-2">
+      <a href="https://github.com/yohanen" target="_blank" class="text-2xl text-yellow-300 hover:text-yellow-400"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/yohanen2021" target="_blank" class="text-2xl text-blue-400 hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:yohanendinagde7@gmail.com" class="text-2xl text-pink-400 hover:text-pink-500"><i class="fas fa-envelope"></i></a>
+    </div>
+    <span>&copy; 2025 Yohanen Dinagde Ejeta. All rights reserved.</span>
   </footer>
 
   <!-- Scripts -->
