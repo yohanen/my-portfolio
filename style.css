@@ -273,4 +273,44 @@ nav.flex.flex-col {
 #themeToggle:hover {
   background: #facc15;
   color: #000;
+}
+
+/* Shimmer animation for hero name */
+.shimmer-text {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #ffe066 0%, #facc15 20%, #a78bfa 50%, #38bdf8 80%, #ffe066 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-move 2.5s linear infinite;
+}
+@keyframes shimmer-move {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Animate SVG blob background */
+@keyframes blob-move {
+  0%, 100% { transform: translate(-50%, 0) scale(1,1); }
+  50% { transform: translate(-50%, 10px) scale(1.05,1.03); }
+}
+.animate-blob-move {
+  animation: blob-move 8s ease-in-out infinite;
+}
+
+/* Enhance hero subtitle glassmorphism */
+.hero-subtitle {
+  box-shadow: 0 8px 32px 0 rgba(31, 41, 55, 0.25), 0 2px 8px 0 #0002;
+  border-radius: 1.5rem;
+  border: 2px solid rgba(255,255,255,0.18);
+  background: linear-gradient(90deg, rgba(31,41,55,0.7) 0%, rgba(55,48,163,0.5) 100%);
+  backdrop-filter: blur(12px);
+  transition: box-shadow 0.3s, background 0.3s;
+}
+.hero-subtitle:hover {
+  box-shadow: 0 16px 48px 0 #facc15a0, 0 2px 8px 0 #0002;
+  background: linear-gradient(90deg, rgba(31,41,55,0.85) 0%, rgba(55,48,163,0.7) 100%);
 } 
