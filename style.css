@@ -328,19 +328,17 @@ nav.flex.flex-col {
   background: linear-gradient(90deg, rgba(31,41,55,0.85) 0%, rgba(55,48,163,0.7) 100%);
 } 
 
-/* Fix card hover contrast for all cards */
+/* Fix card hover contrast for all cards (force all text dark) */
 .bg-gray-700:hover, .bg-gray-600:hover, .modern-card:hover {
   background: linear-gradient(135deg, #facc15 0%, #ffe066 100%) !important;
   color: #181c2f !important;
   box-shadow: 0 8px 32px 0 #facc15a0;
   transform: scale(1.03);
 }
-.bg-gray-700:hover h3, .bg-gray-700:hover p, .bg-gray-700:hover a, .bg-gray-700:hover span,
-.bg-gray-600:hover h3, .bg-gray-600:hover p, .bg-gray-600:hover a, .bg-gray-600:hover span,
-.modern-card:hover h3, .modern-card:hover p, .modern-card:hover a, .modern-card:hover span {
+.bg-gray-700:hover *, .bg-gray-600:hover *, .modern-card:hover * {
   color: #181c2f !important;
   text-shadow: none !important;
 }
 .bg-gray-700:hover a, .bg-gray-600:hover a, .modern-card:hover a {
-  text-decoration: underline;
+  text-decoration: underline !important;
 } 
