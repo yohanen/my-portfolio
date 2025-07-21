@@ -31,19 +31,32 @@
 </head>
 <body class="bg-gray-900 text-white font-sans transition-colors duration-500">
   <!-- Header -->
-  <header class="hero-header relative flex flex-col items-center justify-center text-center py-24 md:py-32 overflow-hidden">
-    <div class="absolute inset-0 w-full h-full hero-bg-gradient z-0"></div>
+  <header class="hero-header relative flex flex-col items-center justify-center text-center py-20 md:py-28 overflow-hidden">
+    <!-- Animated SVG blob background -->
+    <svg class="absolute left-1/2 top-0 -translate-x-1/2 w-[120vw] h-[60vh] z-0 animate-blob-move" viewBox="0 0 900 600" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: blur(32px); opacity: 0.5;">
+      <ellipse cx="450" cy="300" rx="400" ry="180" fill="url(#blobGradient)" />
+      <defs>
+        <linearGradient id="blobGradient" x1="0" y1="0" x2="900" y2="600" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#facc15" />
+          <stop offset="0.5" stop-color="#a78bfa" />
+          <stop offset="1" stop-color="#38bdf8" />
+        </linearGradient>
+      </defs>
+    </svg>
     <div class="relative z-10 w-full flex flex-col items-center">
-      <h1 class="hero-title text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-yellow-400 via-fuchsia-500 to-blue-500 bg-clip-text text-transparent mb-4 drop-shadow-lg">
-        Yohanen Dinagde Ejeta
+      <h1 class="hero-title text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-yellow-400 via-fuchsia-500 to-blue-500 bg-clip-text text-transparent mb-2 drop-shadow-lg">
+        <span class="shimmer-text">Yohanen Dinagde Ejeta</span>
       </h1>
-      <div class="w-full flex justify-center">
-        <p class="hero-subtitle text-xl md:text-2xl font-medium text-white/90 mb-4 inline-block px-6 py-2 rounded-lg shadow-lg bg-gradient-to-r from-blue-900/60 via-indigo-800/60 to-fuchsia-800/60 border border-yellow-300 mt-24 md:mt-28" style="margin-top:6rem;">
-          Tech Enthusiast | Machine Learning & Data Science | <span class="text-yellow-300 font-bold">Open to Internships, Jobs, Remote Roles & Scholarship Opportunities</span>
-        </p>
-      </div>
+      <p class="hero-subtitle text-xl md:text-2xl font-medium text-white/90 mb-2 inline-block px-8 py-3 rounded-2xl shadow-2xl bg-gradient-to-r from-blue-900/70 via-indigo-800/70 to-fuchsia-800/70 border-2 border-yellow-300/60 backdrop-blur-lg">
+        Tech Enthusiast | Machine Learning & Data Science | <span class="text-yellow-300 font-bold">Open to Internships, Jobs, Remote Roles & Scholarship Opportunities</span>
+      </p>
     </div>
-    <!-- Animated SVG background shapes -->
+    <!-- Scroll-down indicator -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center animate-bounce">
+      <span class="text-yellow-300 text-3xl"><i class="fas fa-chevron-down"></i></span>
+      <span class="text-xs text-gray-300 mt-1">Scroll</span>
+    </div>
+    <!-- Animated SVG wave background -->
     <svg class="absolute left-0 top-0 w-full h-full z-0 pointer-events-none" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fill="#facc15" fill-opacity="0.08" d="M0,160L60,170.7C120,181,240,203,360,197.3C480,192,600,160,720,133.3C840,107,960,85,1080,101.3C1200,117,1320,171,1380,197.3L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
     </svg>
