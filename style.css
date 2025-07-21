@@ -11,13 +11,26 @@ body.light-mode {
   color: #1c1c1c !important;
 }
 
-/* Sidebar scrollbar */
-.bg-gray-800[style*="overflow-y:auto"]::-webkit-scrollbar {
-  width: 8px;
+/* Modern sidebar scrollbar */
+.bg-gray-800[style*="overflow-y:auto"], .bg-gray-800.overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #facc15 #232946;
 }
-.bg-gray-800[style*="overflow-y:auto"]::-webkit-scrollbar-thumb {
+.bg-gray-800[style*="overflow-y:auto"]::-webkit-scrollbar, .bg-gray-800.overflow-y-auto::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+.bg-gray-800[style*="overflow-y:auto"]::-webkit-scrollbar-thumb, .bg-gray-800.overflow-y-auto::-webkit-scrollbar-thumb {
   background: #facc15;
   border-radius: 6px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.bg-gray-800[style*="overflow-y:auto"]:hover::-webkit-scrollbar-thumb, .bg-gray-800.overflow-y-auto:hover::-webkit-scrollbar-thumb {
+  opacity: 1;
+}
+.bg-gray-800[style*="overflow-y:auto"]::-webkit-scrollbar-track, .bg-gray-800.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 /* Section containers - glassmorphism */
