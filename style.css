@@ -8,7 +8,7 @@ body {
 }
 body.light-mode {
   background: linear-gradient(135deg, #f0f2f5 0%, #e3e8ee 100%) !important;
-  color: #1c1c1c !important;
+  color: #333 !important;
 }
 
 /* Modern sidebar scrollbar */
@@ -341,4 +341,88 @@ nav.flex.flex-col {
 }
 .bg-gray-700:hover a, .bg-gray-600:hover a, .modern-card:hover a {
   text-decoration: underline !important;
+} 
+
+/* --- Modern Light Mode Styles --- */
+
+body.light-mode {
+  background: linear-gradient(135deg, #f0f2f5 0%, #e3e8ee 100%) !important;
+  color: #333 !important;
+}
+
+/* Light mode cards */
+body.light-mode .section-content, 
+body.light-mode .glass-nav {
+  background: rgba(255, 255, 255, 0.65) !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(14px) !important;
+}
+
+/* Light mode typography */
+body.light-mode h1, 
+body.light-mode h2, 
+body.light-mode h3, 
+body.light-mode h4, 
+body.light-mode h5, 
+body.light-mode h6 {
+  color: #232946 !important;
+  text-shadow: 0 1px 4px #0002 !important;
+}
+
+body.light-mode p, 
+body.light-mode li, 
+body.light-mode span, 
+body.light-mode label, 
+body.light-mode input, 
+body.light-mode textarea {
+  color: #333 !important;
+}
+
+body.light-mode a {
+  color: #4f46e5 !important;
+}
+body.light-mode a:hover {
+  color: #3730a3 !important;
+}
+
+/* Light mode sidebar */
+body.light-mode .nav-link {
+  color: #232946 !important;
+}
+body.light-mode .nav-link.active,
+body.light-mode .nav-link:hover {
+  background: #232946 !important;
+  color: #fff !important;
+}
+
+/* Light mode hero */
+body.light-mode .hero-subtitle {
+  background: linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(230,230,250,0.5) 100%) !important;
+  border-color: rgba(0,0,0,0.2) !important;
+  color: #333 !important;
+}
+body.light-mode .hero-subtitle span {
+  color: #4f46e5 !important;
+}
+
+/* Light mode buttons */
+body.light-mode button, 
+body.light-mode .btn {
+  background: linear-gradient(90deg, #4f46e5 0%, #6366f1 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px #4f46e560 !important;
+}
+body.light-mode button:hover, 
+body.light-mode .btn:hover {
+  background: linear-gradient(90deg, #6366f1 0%, #4f46e5 100%) !important;
+  box-shadow: 0 4px 16px #4f46e560 !important;
+}
+
+/* Light mode skill bar */
+body.light-mode .skill-bar {
+  background: #e5e7eb !important;
+}
+body.light-mode .skill-bar-fill {
+  background: linear-gradient(90deg, #4f46e5 0%, #6366f1 100%) !important;
 } 
